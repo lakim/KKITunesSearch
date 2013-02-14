@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 
-@interface KKITunesSearch : NSObject
+@interface KKITunesSearch : AFHTTPClient
+
+@property (nonatomic, strong) NSMutableDictionary *defaultParameters;
+@property (nonatomic, readonly) NSString *countryCode;
+
++ (KKITunesSearch *)sharedClient;
+
+- (void)searchApps:(NSString *)term
+           success:(void(^)(NSUInteger count, NSArray *results))success
+           failure:(void(^)(NSError *error))failure;
 
 @end

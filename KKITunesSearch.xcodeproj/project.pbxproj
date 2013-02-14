@@ -375,6 +375,7 @@
 		};
 		E7B3083416CD3A6200AFB34D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F8113C42E954DF99FF85436 /* Pods.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",

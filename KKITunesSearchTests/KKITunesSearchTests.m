@@ -7,26 +7,25 @@
 //
 
 #import "KKITunesSearchTests.h"
+#import "KKITunesSearch.h"
+#import "SenTest+Async.h"
 
 @implementation KKITunesSearchTests
 
-- (void)setUp
-{
-    [super setUp];
+- (void)testSearchApps {
     
-    // Set-up code here.
-}
-
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in KKITunesSearchTests");
+    [self runTestWithBlock:^{
+        
+        [[KKITunesSearch sharedClient] searchApps:@"Tactilize" success:^(NSUInteger count, NSArray *results) {
+            STAssertTrue(count > 0, @"Count should not be zero");
+            STAssertTrue(results.count > 0, @"Results array should contain objects");
+            STAssertTrue([results[0] isKindOfClass:[NSDictionary class]], @"Results should be a dictionary");
+            [self blockTestCompleted];
+        } failure:^(NSError *error) {
+            STFail(@"Couldn't search apps");
+            [self blockTestCompleted];
+        }];
+    }];
 }
 
 @end
