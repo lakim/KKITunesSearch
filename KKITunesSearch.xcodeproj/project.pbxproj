@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E7B3080F16CD3A6200AFB34D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3080E16CD3A6200AFB34D /* Foundation.framework */; };
+		E7B3081416CD3A6200AFB34D /* KKITunesSearch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7B3081316CD3A6200AFB34D /* KKITunesSearch.h */; };
+		E7B3081616CD3A6200AFB34D /* KKITunesSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B3081516CD3A6200AFB34D /* KKITunesSearch.m */; };
+		E7B3081E16CD3A6200AFB34D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3081D16CD3A6200AFB34D /* SenTestingKit.framework */; };
+		E7B3082016CD3A6200AFB34D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3081F16CD3A6200AFB34D /* UIKit.framework */; };
+		E7B3082116CD3A6200AFB34D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3080E16CD3A6200AFB34D /* Foundation.framework */; };
+		E7B3082416CD3A6200AFB34D /* libKKITunesSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */; };
+		E7B3082A16CD3A6200AFB34D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7B3082816CD3A6200AFB34D /* InfoPlist.strings */; };
+		E7B3082D16CD3A6200AFB34D /* KKITunesSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B3082C16CD3A6200AFB34D /* KKITunesSearchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7B3082216CD3A6200AFB34D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7B3080216CD3A6200AFB34D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7B3080A16CD3A6200AFB34D;
+			remoteInfo = KKITunesSearch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E7B3080916CD3A6200AFB34D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				E7B3081416CD3A6200AFB34D /* KKITunesSearch.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKKITunesSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B3080E16CD3A6200AFB34D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E7B3081216CD3A6200AFB34D /* KKITunesSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKITunesSearch-Prefix.pch"; sourceTree = "<group>"; };
+		E7B3081316CD3A6200AFB34D /* KKITunesSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKITunesSearch.h; sourceTree = "<group>"; };
+		E7B3081516CD3A6200AFB34D /* KKITunesSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKITunesSearch.m; sourceTree = "<group>"; };
+		E7B3081C16CD3A6200AFB34D /* KKITunesSearchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKITunesSearchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B3081D16CD3A6200AFB34D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E7B3081F16CD3A6200AFB34D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		E7B3082716CD3A6200AFB34D /* KKITunesSearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KKITunesSearchTests-Info.plist"; sourceTree = "<group>"; };
+		E7B3082916CD3A6200AFB34D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E7B3082B16CD3A6200AFB34D /* KKITunesSearchTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKITunesSearchTests.h; sourceTree = "<group>"; };
+		E7B3082C16CD3A6200AFB34D /* KKITunesSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKITunesSearchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7B3080816CD3A6200AFB34D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B3080F16CD3A6200AFB34D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7B3081816CD3A6200AFB34D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B3081E16CD3A6200AFB34D /* SenTestingKit.framework in Frameworks */,
+				E7B3082016CD3A6200AFB34D /* UIKit.framework in Frameworks */,
+				E7B3082116CD3A6200AFB34D /* Foundation.framework in Frameworks */,
+				E7B3082416CD3A6200AFB34D /* libKKITunesSearch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E7B3080016CD3A6200AFB34D = {
+			isa = PBXGroup;
+			children = (
+				E7B3081016CD3A6200AFB34D /* KKITunesSearch */,
+				E7B3082516CD3A6200AFB34D /* KKITunesSearchTests */,
+				E7B3080D16CD3A6200AFB34D /* Frameworks */,
+				E7B3080C16CD3A6200AFB34D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E7B3080C16CD3A6200AFB34D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */,
+				E7B3081C16CD3A6200AFB34D /* KKITunesSearchTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7B3080D16CD3A6200AFB34D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7B3080E16CD3A6200AFB34D /* Foundation.framework */,
+				E7B3081D16CD3A6200AFB34D /* SenTestingKit.framework */,
+				E7B3081F16CD3A6200AFB34D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7B3081016CD3A6200AFB34D /* KKITunesSearch */ = {
+			isa = PBXGroup;
+			children = (
+				E7B3081316CD3A6200AFB34D /* KKITunesSearch.h */,
+				E7B3081516CD3A6200AFB34D /* KKITunesSearch.m */,
+				E7B3081116CD3A6200AFB34D /* Supporting Files */,
+			);
+			path = KKITunesSearch;
+			sourceTree = "<group>";
+		};
+		E7B3081116CD3A6200AFB34D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7B3081216CD3A6200AFB34D /* KKITunesSearch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7B3082516CD3A6200AFB34D /* KKITunesSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7B3082B16CD3A6200AFB34D /* KKITunesSearchTests.h */,
+				E7B3082C16CD3A6200AFB34D /* KKITunesSearchTests.m */,
+				E7B3082616CD3A6200AFB34D /* Supporting Files */,
+			);
+			path = KKITunesSearchTests;
+			sourceTree = "<group>";
+		};
+		E7B3082616CD3A6200AFB34D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7B3082716CD3A6200AFB34D /* KKITunesSearchTests-Info.plist */,
+				E7B3082816CD3A6200AFB34D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7B3080A16CD3A6200AFB34D /* KKITunesSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7B3083016CD3A6200AFB34D /* Build configuration list for PBXNativeTarget "KKITunesSearch" */;
+			buildPhases = (
+				E7B3080716CD3A6200AFB34D /* Sources */,
+				E7B3080816CD3A6200AFB34D /* Frameworks */,
+				E7B3080916CD3A6200AFB34D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKITunesSearch;
+			productName = KKITunesSearch;
+			productReference = E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E7B3081B16CD3A6200AFB34D /* KKITunesSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7B3083316CD3A6200AFB34D /* Build configuration list for PBXNativeTarget "KKITunesSearchTests" */;
+			buildPhases = (
+				E7B3081716CD3A6200AFB34D /* Sources */,
+				E7B3081816CD3A6200AFB34D /* Frameworks */,
+				E7B3081916CD3A6200AFB34D /* Resources */,
+				E7B3081A16CD3A6200AFB34D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7B3082316CD3A6200AFB34D /* PBXTargetDependency */,
+			);
+			name = KKITunesSearchTests;
+			productName = KKITunesSearchTests;
+			productReference = E7B3081C16CD3A6200AFB34D /* KKITunesSearchTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7B3080216CD3A6200AFB34D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Kimkode;
+			};
+			buildConfigurationList = E7B3080516CD3A6200AFB34D /* Build configuration list for PBXProject "KKITunesSearch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E7B3080016CD3A6200AFB34D;
+			productRefGroup = E7B3080C16CD3A6200AFB34D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7B3080A16CD3A6200AFB34D /* KKITunesSearch */,
+				E7B3081B16CD3A6200AFB34D /* KKITunesSearchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7B3081916CD3A6200AFB34D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B3082A16CD3A6200AFB34D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E7B3081A16CD3A6200AFB34D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7B3080716CD3A6200AFB34D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B3081616CD3A6200AFB34D /* KKITunesSearch.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7B3081716CD3A6200AFB34D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B3082D16CD3A6200AFB34D /* KKITunesSearchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7B3082316CD3A6200AFB34D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7B3080A16CD3A6200AFB34D /* KKITunesSearch */;
+			targetProxy = E7B3082216CD3A6200AFB34D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E7B3082816CD3A6200AFB34D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7B3082916CD3A6200AFB34D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7B3082E16CD3A6200AFB34D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E7B3082F16CD3A6200AFB34D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7B3083116CD3A6200AFB34D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KKITunesSearch.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E7B3083216CD3A6200AFB34D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KKITunesSearch.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E7B3083416CD3A6200AFB34D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				INFOPLIST_FILE = "KKITunesSearchTests/KKITunesSearchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E7B3083516CD3A6200AFB34D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				INFOPLIST_FILE = "KKITunesSearchTests/KKITunesSearchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7B3080516CD3A6200AFB34D /* Build configuration list for PBXProject "KKITunesSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7B3082E16CD3A6200AFB34D /* Debug */,
+				E7B3082F16CD3A6200AFB34D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7B3083016CD3A6200AFB34D /* Build configuration list for PBXNativeTarget "KKITunesSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7B3083116CD3A6200AFB34D /* Debug */,
+				E7B3083216CD3A6200AFB34D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E7B3083316CD3A6200AFB34D /* Build configuration list for PBXNativeTarget "KKITunesSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7B3083416CD3A6200AFB34D /* Debug */,
+				E7B3083516CD3A6200AFB34D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7B3080216CD3A6200AFB34D /* Project object */;
+}
