@@ -15,5 +15,7 @@ build/*
 *.perspective
 *.perspectivev3
 *.pbxuser
-*.xcworkspace
 xcuserdata
+
+# Exclude Pods
+Pods

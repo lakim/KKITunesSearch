@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E49D79D525C444C1A2499B15 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB97B9ADB214257AAEB4E4F /* libPods.a */; };
 		E7B3080F16CD3A6200AFB34D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3080E16CD3A6200AFB34D /* Foundation.framework */; };
 		E7B3081416CD3A6200AFB34D /* KKITunesSearch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7B3081316CD3A6200AFB34D /* KKITunesSearch.h */; };
 		E7B3081616CD3A6200AFB34D /* KKITunesSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B3081516CD3A6200AFB34D /* KKITunesSearch.m */; };
@@ -42,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5EB97B9ADB214257AAEB4E4F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F8113C42E954DF99FF85436 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKKITunesSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B3080E16CD3A6200AFB34D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7B3081216CD3A6200AFB34D /* KKITunesSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKITunesSearch-Prefix.pch"; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B3080F16CD3A6200AFB34D /* Foundation.framework in Frameworks */,
+				E49D79D525C444C1A2499B15 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 				E7B3082516CD3A6200AFB34D /* KKITunesSearchTests */,
 				E7B3080D16CD3A6200AFB34D /* Frameworks */,
 				E7B3080C16CD3A6200AFB34D /* Products */,
+				5F8113C42E954DF99FF85436 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +109,7 @@
 				E7B3080E16CD3A6200AFB34D /* Foundation.framework */,
 				E7B3081D16CD3A6200AFB34D /* SenTestingKit.framework */,
 				E7B3081F16CD3A6200AFB34D /* UIKit.framework */,
+				5EB97B9ADB214257AAEB4E4F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 				E7B3080716CD3A6200AFB34D /* Sources */,
 				E7B3080816CD3A6200AFB34D /* Frameworks */,
 				E7B3080916CD3A6200AFB34D /* CopyFiles */,
+				80B9815037414DCD98C43C9F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,6 +230,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		80B9815037414DCD98C43C9F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		E7B3081A16CD3A6200AFB34D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +321,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -319,6 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -326,6 +349,7 @@
 		};
 		E7B3083116CD3A6200AFB34D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F8113C42E954DF99FF85436 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/KKITunesSearch.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -338,6 +362,7 @@
 		};
 		E7B3083216CD3A6200AFB34D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F8113C42E954DF99FF85436 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/KKITunesSearch.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -397,6 +422,7 @@
 				E7B3083216CD3A6200AFB34D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7B3083316CD3A6200AFB34D /* Build configuration list for PBXNativeTarget "KKITunesSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +431,7 @@
 				E7B3083516CD3A6200AFB34D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
