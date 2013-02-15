@@ -16,8 +16,16 @@
 
 + (KKITunesSearch *)sharedClient;
 
+- (void)searchWithParams:(NSDictionary *)searchParams
+                 success:(void(^)(NSUInteger count, NSArray *results))success
+                 failure:(void(^)(NSError *error))failure;
+
 - (void)searchApps:(NSString *)term
            success:(void(^)(NSUInteger count, NSArray *results))success
            failure:(void(^)(NSError *error))failure;
+
+- (void)searchMusic:(NSString *)term
+            success:(void(^)(NSUInteger count, NSArray *results))success
+            failure:(void(^)(NSError *error))failure;
 
 @end

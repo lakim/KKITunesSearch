@@ -57,18 +57,17 @@ static NSInteger kKKITunesSearchErrorCode = 1;
 
 #pragma mark Requests
 
-- (void)searchApps:(NSString *)term
-           success:(void(^)(NSUInteger count, NSArray *results))success
-           failure:(void(^)(NSError *error))failure {
+- (void)searchWithParams:(NSDictionary *)searchParams
+                 success:(void(^)(NSUInteger count, NSArray *results))success
+                 failure:(void(^)(NSError *error))failure {
     
     NSMutableDictionary *params = self.defaultParameters;
-    params[@"entity"] = @"software,iPadSoftware,macSoftware";
-    params[@"term"] = term;
+    [params addEntriesFromDictionary:searchParams];
     
     [self getPath:nil
        parameters:params
           success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-
+              
               NSNumber *count = nil;
               NSArray *results = nil;
               if ([responseObject isKindOfClass:[NSDictionary class]] &&
@@ -88,6 +87,30 @@ static NSInteger kKKITunesSearchErrorCode = 1;
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               failure(error);
           }];
+}
+
+- (void)searchApps:(NSString *)term
+           success:(void(^)(NSUInteger count, NSArray *results))success
+           failure:(void(^)(NSError *error))failure {
+    
+    NSDictionary *params = @{
+        @"entity": @"software,iPadSoftware,macSoftware",
+        @"term": term
+    };
+    
+    [self searchWithParams:params success:success failure:failure];
+}
+
+- (void)searchMusic:(NSString *)term
+            success:(void(^)(NSUInteger count, NSArray *results))success
+            failure:(void(^)(NSError *error))failure {
+    
+    NSDictionary *params = @{
+        @"media": @"music",
+        @"term": term
+    };
+    
+    [self searchWithParams:params success:success failure:failure];
 }
 
 @end
