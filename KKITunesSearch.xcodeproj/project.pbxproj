@@ -45,9 +45,9 @@
 /* Begin PBXFileReference section */
 		5EB97B9ADB214257AAEB4E4F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8113C42E954DF99FF85436 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		E71AC18316CE7C5E00605B29 /* KKITunesSearch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKITunesSearch-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKKITunesSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B3080E16CD3A6200AFB34D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E7B3081216CD3A6200AFB34D /* KKITunesSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKITunesSearch-Prefix.pch"; sourceTree = "<group>"; };
 		E7B3081316CD3A6200AFB34D /* KKITunesSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKITunesSearch.h; sourceTree = "<group>"; };
 		E7B3081516CD3A6200AFB34D /* KKITunesSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKITunesSearch.m; sourceTree = "<group>"; };
 		E7B3081C16CD3A6200AFB34D /* KKITunesSearchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKITunesSearchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +127,7 @@
 		E7B3081116CD3A6200AFB34D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E7B3081216CD3A6200AFB34D /* KKITunesSearch-Prefix.pch */,
+				E71AC18316CE7C5E00605B29 /* KKITunesSearch-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/KKITunesSearch.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				GCC_PREFIX_HEADER = "KKITunesSearch-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -366,7 +366,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/KKITunesSearch.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				GCC_PREFIX_HEADER = "KKITunesSearch-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -382,7 +382,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				GCC_PREFIX_HEADER = "KKITunesSearch-Prefix.pch";
 				INFOPLIST_FILE = "KKITunesSearchTests/KKITunesSearchTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -397,7 +397,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KKITunesSearch/KKITunesSearch-Prefix.pch";
+				GCC_PREFIX_HEADER = "KKITunesSearch-Prefix.pch";
 				INFOPLIST_FILE = "KKITunesSearchTests/KKITunesSearchTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
