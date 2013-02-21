@@ -64,6 +64,7 @@ static NSInteger kKKITunesSearchErrorCode = 1;
     NSMutableDictionary *params = self.defaultParameters;
     [params addEntriesFromDictionary:searchParams];
     
+    [[self operationQueue] cancelAllOperations];
     [self getPath:nil
        parameters:params
           success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
@@ -89,26 +90,25 @@ static NSInteger kKKITunesSearchErrorCode = 1;
           }];
 }
 
-- (void)searchApps:(NSString *)term
-           success:(void(^)(NSUInteger count, NSArray *results))success
-           failure:(void(^)(NSError *error))failure {
+- (void)search:(NSString *)term
+      withType:(KKITunesSearchType)type
+       success:(void(^)(NSUInteger count, NSArray *results))success
+       failure:(void(^)(NSError *error))failure {
     
-    NSDictionary *params = @{
-        @"entity": @"software,iPadSoftware,macSoftware",
-        @"term": term
-    };
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   term, @"term",
+                                   @"songTerm", @"attribute",
+                                   nil];
     
-    [self searchWithParams:params success:success failure:failure];
-}
-
-- (void)searchMusic:(NSString *)term
-            success:(void(^)(NSUInteger count, NSArray *results))success
-            failure:(void(^)(NSError *error))failure {
-    
-    NSDictionary *params = @{
-        @"media": @"music",
-        @"term": term
-    };
+    switch (type) {
+        case KKITunesSearchTypeApps:
+            params[@"entity"] = @"iPadSoftware,software,macSoftware";
+            break;
+        case KKITunesSearchTypeMusic:
+            params[@"media"] = @"music";
+        default:
+            break;
+    }
     
     [self searchWithParams:params success:success failure:failure];
 }

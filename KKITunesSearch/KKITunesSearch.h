@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 
+typedef enum {
+    KKITunesSearchTypeAll,
+    KKITunesSearchTypeApps,
+    KKITunesSearchTypeMusic
+} KKITunesSearchType;
+
 @interface KKITunesSearch : AFHTTPClient
 
 @property (nonatomic, strong) NSMutableDictionary *defaultParameters;
@@ -20,12 +26,9 @@
                  success:(void(^)(NSUInteger count, NSArray *results))success
                  failure:(void(^)(NSError *error))failure;
 
-- (void)searchApps:(NSString *)term
-           success:(void(^)(NSUInteger count, NSArray *results))success
-           failure:(void(^)(NSError *error))failure;
-
-- (void)searchMusic:(NSString *)term
-            success:(void(^)(NSUInteger count, NSArray *results))success
-            failure:(void(^)(NSError *error))failure;
+- (void)search:(NSString *)term
+      withType:(KKITunesSearchType)type
+       success:(void(^)(NSUInteger count, NSArray *results))success
+       failure:(void(^)(NSError *error))failure;
 
 @end

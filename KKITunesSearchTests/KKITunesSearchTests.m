@@ -16,7 +16,9 @@
     
     [self runTestWithBlock:^{
         
-        [[KKITunesSearch sharedClient] searchApps:@"Tactilize" success:^(NSUInteger count, NSArray *results) {
+        [[KKITunesSearch sharedClient] search:@"Tactilize"
+                                     withType:KKITunesSearchTypeApps
+                                      success:^(NSUInteger count, NSArray *results) {
             STAssertTrue(count > 0, @"Count should not be zero");
             STAssertTrue(results.count > 0, @"Results array should contain objects");
             NSUInteger index = [results indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
@@ -40,7 +42,9 @@
     
     [self runTestWithBlock:^{
         
-        [[KKITunesSearch sharedClient] searchMusic:@"Let It Be" success:^(NSUInteger count, NSArray *results) {
+        [[KKITunesSearch sharedClient] search:@"Let It Be"
+                                     withType:KKITunesSearchTypeMusic
+                                      success:^(NSUInteger count, NSArray *results) {
             STAssertTrue(count > 0, @"Count should not be zero");
             STAssertTrue(results.count > 0, @"Results array should contain objects");
             NSDictionary *result = results[0];
