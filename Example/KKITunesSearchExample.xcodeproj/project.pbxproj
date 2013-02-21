@@ -98,7 +98,6 @@
 		E7129E5416D63706002AD763 = {
 			isa = PBXGroup;
 			children = (
-				E7129FB416D68A4E002AD763 /* StoreKit.framework */,
 				E7129E6916D63706002AD763 /* KKITunesSearchExample */,
 				E7129E6216D63706002AD763 /* Frameworks */,
 				E7129E9416D63960002AD763 /* Vendor */,
@@ -117,6 +116,7 @@
 		E7129E6216D63706002AD763 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7129FB416D68A4E002AD763 /* StoreKit.framework */,
 				E7129E6316D63706002AD763 /* UIKit.framework */,
 				E7129E6516D63706002AD763 /* Foundation.framework */,
 				E7129E6716D63706002AD763 /* CoreGraphics.framework */,
