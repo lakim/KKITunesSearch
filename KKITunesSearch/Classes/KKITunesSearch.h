@@ -22,9 +22,9 @@ typedef enum {
 
 + (KKITunesSearch *)sharedClient;
 
-- (void)searchWithParams:(NSDictionary *)searchParams
-                 success:(void(^)(NSUInteger count, NSArray *results))success
-                 failure:(void(^)(NSError *error))failure;
+- (AFHTTPRequestOperation *)HTTPRequestOperationWithParams:(NSDictionary *)searchParams
+                                                   success:(void(^)(NSUInteger count, NSArray *results))success
+                                                   failure:(void(^)(NSError *error))failure;
 
 - (void)search:(NSString *)term
       withType:(KKITunesProductType)type

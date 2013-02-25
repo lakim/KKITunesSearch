@@ -58,37 +58,38 @@ static NSInteger kKKITunesSearchLimit = 3;
 
 #pragma mark Requests
 
-- (void)searchWithParams:(NSDictionary *)searchParams
-                 success:(void(^)(NSUInteger count, NSArray *results))success
-                 failure:(void(^)(NSError *error))failure {
+- (AFHTTPRequestOperation *)HTTPRequestOperationWithParams:(NSDictionary *)searchParams
+                                                   success:(void(^)(NSUInteger count, NSArray *results))success
+                                                   failure:(void(^)(NSError *error))failure {
     
     NSMutableDictionary *params = self.defaultParameters;
     [params addEntriesFromDictionary:searchParams];
     
-    [[self operationQueue] cancelAllOperations];
-    [self getPath:nil
-       parameters:params
-          success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-              
-              NSNumber *count = nil;
-              NSArray *results = nil;
-              if ([responseObject isKindOfClass:[NSDictionary class]] &&
-                  (count = responseObject[@"resultCount"]) &&
-                  [count isKindOfClass:[NSNumber class]] &&
-                  (results = responseObject[@"results"]) &&
-                  [results isKindOfClass:[NSArray class]]) {
-                  
-                  success(count.integerValue, results);
-              } else {
-                  
-                  failure([NSError errorWithDomain:kKKITunesSearchErrorDomain
-                                              code:kKKITunesSearchErrorCode
-                                          userInfo:nil]);
-              }
-              
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              failure(error);
-          }];
+    NSURLRequest *request = [self requestWithMethod:@"GET" path:nil parameters:params];
+    AFHTTPRequestOperation *operation =
+    [self HTTPRequestOperationWithRequest:request
+                                  success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+                                      
+                                      NSNumber *count = nil;
+                                      NSArray *results = nil;
+                                      if ([responseObject isKindOfClass:[NSDictionary class]] &&
+                                          (count = responseObject[@"resultCount"]) &&
+                                          [count isKindOfClass:[NSNumber class]] &&
+                                          (results = responseObject[@"results"]) &&
+                                          [results isKindOfClass:[NSArray class]]) {
+                                          
+                                          success(count.integerValue, results);
+                                      } else {
+                                          
+                                          failure([NSError errorWithDomain:kKKITunesSearchErrorDomain
+                                                                      code:kKKITunesSearchErrorCode
+                                                                  userInfo:nil]);
+                                      }
+                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      failure(error);
+                                  }];
+    
+    return operation;
 }
 
 - (void)search:(NSString *)term
@@ -96,23 +97,47 @@ static NSInteger kKKITunesSearchLimit = 3;
        success:(void(^)(NSUInteger count, NSArray *results))success
        failure:(void(^)(NSError *error))failure {
     
+    [[self operationQueue] cancelAllOperations];
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    term, @"term",
                                    [NSNumber numberWithInteger:kKKITunesSearchLimit], @"limit",
                                    nil];
     
+    NSArray *entities = nil;
     switch (type) {
         case KKITunesProductTypeApps:
-            params[@"entity"] = @"iPadSoftware,software,macSoftware";
+            entities = @[ @"iPadSoftware", @"software", @"macSoftware" ];
             params[@"songTerm"] = @"attribute";
             break;
         case KKITunesProductTypeMusic:
-            params[@"entity"] = @"musicArtist,album,song";
+            entities = @[ @"musicArtist", @"album", @"song" ];
         default:
             break;
     }
     
-    [self searchWithParams:params success:success failure:failure];
+    __block NSInteger batchResultsCount = 0;
+    NSMutableArray *batchResults = [NSMutableArray array];
+    NSMutableArray *operations = [NSMutableArray array];
+    for (NSString *entity in entities) {
+        params[@"entity"] = entity;
+        
+        AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithParams:params
+                                                                         success:^(NSUInteger count, NSArray *results) {
+                                                                             batchResultsCount += count;
+                                                                             [batchResults addObjectsFromArray:results];
+                                                                         } failure:^(NSError *error) {
+                                                                             
+                                                                         }];
+        [operations addObject:operation];
+    }
+    
+    [self enqueueBatchOfHTTPRequestOperations:operations
+                                progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
+                                    
+                                } completionBlock:^(NSArray *operations) {
+                                    success(batchResultsCount, batchResults);
+                                }];
 }
 
 @end

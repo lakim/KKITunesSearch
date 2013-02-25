@@ -61,7 +61,6 @@
     }
     
     self.products = [NSArray arrayWithArray:products];
-    // Remove empty sections
     NSIndexSet *nonEmptyIndexes = [sections indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [obj[@"products"] count] > 0;
     }];
