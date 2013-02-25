@@ -17,7 +17,7 @@
     [self runTestWithBlock:^{
         
         [[KKITunesSearch sharedClient] search:@"Tactilize"
-                                     withType:KKITunesSearchTypeApps
+                                     withType:KKITunesProductTypeApps
                                       success:^(NSUInteger count, NSArray *results) {
             STAssertTrue(count > 0, @"Count should not be zero");
             STAssertTrue(results.count > 0, @"Results array should contain objects");
@@ -43,7 +43,7 @@
     [self runTestWithBlock:^{
         
         [[KKITunesSearch sharedClient] search:@"Let It Be"
-                                     withType:KKITunesSearchTypeMusic
+                                     withType:KKITunesProductTypeMusic
                                       success:^(NSUInteger count, NSArray *results) {
             STAssertTrue(count > 0, @"Count should not be zero");
             STAssertTrue(results.count > 0, @"Results array should contain objects");

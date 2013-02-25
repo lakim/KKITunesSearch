@@ -11,6 +11,7 @@
 static NSString *kKKITunesSearchBaseURL = @"https://itunes.apple.com/search";
 static NSString *kKKITunesSearchErrorDomain = @"com.kimkode.KKITunesSearch";
 static NSInteger kKKITunesSearchErrorCode = 1;
+static NSInteger kKKITunesSearchLimit = 3;
 
 @implementation KKITunesSearch
 
@@ -91,21 +92,22 @@ static NSInteger kKKITunesSearchErrorCode = 1;
 }
 
 - (void)search:(NSString *)term
-      withType:(KKITunesSearchType)type
+      withType:(KKITunesProductType)type
        success:(void(^)(NSUInteger count, NSArray *results))success
        failure:(void(^)(NSError *error))failure {
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    term, @"term",
-                                   @"songTerm", @"attribute",
+                                   [NSNumber numberWithInteger:kKKITunesSearchLimit], @"limit",
                                    nil];
     
     switch (type) {
-        case KKITunesSearchTypeApps:
+        case KKITunesProductTypeApps:
             params[@"entity"] = @"iPadSoftware,software,macSoftware";
+            params[@"songTerm"] = @"attribute";
             break;
-        case KKITunesSearchTypeMusic:
-            params[@"media"] = @"music";
+        case KKITunesProductTypeMusic:
+            params[@"entity"] = @"musicArtist,album,song";
         default:
             break;
     }

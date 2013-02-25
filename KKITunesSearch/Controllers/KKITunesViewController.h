@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KKITunesSearch.h"
 #import <StoreKit/StoreKit.h>
+#import "KKITunesProductsCollection.h"
+
+@class KKITunesViewController;
+
+@protocol KKITunesViewControllerDelegate <NSObject>
+@optional
+- (void)iTunesViewController:(KKITunesViewController *)viewController didSelectProduct:(KKITunesProduct *)product;
+@end
 
 @interface KKITunesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SKStoreProductViewControllerDelegate>
 
@@ -20,9 +27,10 @@
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender;
 
-@property (strong, nonatomic) NSArray *results;
+@property (weak, nonatomic) id<KKITunesViewControllerDelegate> delegate;
+@property (strong, nonatomic) KKITunesProductsCollection *products;
 @property (strong, nonatomic) NSTimer *timer;
-@property (readonly, nonatomic) KKITunesSearchType searchType;
+@property (readonly, nonatomic) KKITunesProductType searchType;
 
 - (void)scheduleSearch;
 - (void)unscheduleSearch;

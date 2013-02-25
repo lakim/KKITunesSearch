@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class KKITunesViewController;
-
 @interface KKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) KKITunesViewController *viewController;
+@property (strong, nonatomic) UIViewController *viewController;
 
 @end

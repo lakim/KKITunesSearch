@@ -16,7 +16,6 @@
 		E7129E7616D63707002AD763 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E7129E7516D63707002AD763 /* Default.png */; };
 		E7129E7816D63707002AD763 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7129E7716D63707002AD763 /* Default@2x.png */; };
 		E7129E7A16D63707002AD763 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7129E7916D63707002AD763 /* Default-568h@2x.png */; };
-		E7129E9D16D63BF2002AD763 /* KKITunesSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = E7129E9C16D63BF2002AD763 /* KKITunesSearch.m */; };
 		E7129F4816D63C12002AD763 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E7129EA216D63C12002AD763 /* AFHTTPClient.m */; };
 		E7129F4916D63C12002AD763 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7129EA416D63C12002AD763 /* AFHTTPRequestOperation.m */; };
 		E7129F4A16D63C12002AD763 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7129EA616D63C12002AD763 /* AFImageRequestOperation.m */; };
@@ -31,8 +30,15 @@
 		E7129F5316D63C12002AD763 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E7129EB616D63C12002AD763 /* README.md */; };
 		E7129FB316D64CF4002AD763 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E7129FB216D64CF4002AD763 /* placeholder.png */; };
 		E7129FB516D68A4E002AD763 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7129FB416D68A4E002AD763 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E7129FBD16D690B7002AD763 /* KKITunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7129FBB16D690B7002AD763 /* KKITunesViewController.m */; };
-		E7129FBE16D690B7002AD763 /* KKITunesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7129FBC16D690B7002AD763 /* KKITunesViewController.xib */; };
+		E748142B16DBA18E009230F0 /* KKITunesSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = E748141D16DBA18E009230F0 /* KKITunesSearch.m */; };
+		E748142C16DBA18E009230F0 /* KKITunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E748142016DBA18E009230F0 /* KKITunesViewController.m */; };
+		E748142D16DBA18E009230F0 /* KKITunesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E748142116DBA18E009230F0 /* KKITunesViewController.xib */; };
+		E748142E16DBA18E009230F0 /* KKITunesAppProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E748142416DBA18E009230F0 /* KKITunesAppProduct.m */; };
+		E748142F16DBA18E009230F0 /* KKITunesMusicProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E748142616DBA18E009230F0 /* KKITunesMusicProduct.m */; };
+		E748143016DBA18E009230F0 /* KKITunesProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E748142816DBA18E009230F0 /* KKITunesProduct.m */; };
+		E748143116DBA18E009230F0 /* KKITunesProductsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = E748142A16DBA18E009230F0 /* KKITunesProductsCollection.m */; };
+		E748143416DBA1BA009230F0 /* KKIPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E748143316DBA1BA009230F0 /* KKIPadViewController.m */; };
+		E748143716DBA1CF009230F0 /* KKIPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E748143516DBA1CF009230F0 /* KKIPadViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +55,6 @@
 		E7129E7516D63707002AD763 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E7129E7716D63707002AD763 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E7129E7916D63707002AD763 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		E7129E9B16D63BF2002AD763 /* KKITunesSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesSearch.h; sourceTree = "<group>"; };
-		E7129E9C16D63BF2002AD763 /* KKITunesSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesSearch.m; sourceTree = "<group>"; };
 		E7129EA116D63C12002AD763 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		E7129EA216D63C12002AD763 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		E7129EA316D63C12002AD763 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -75,9 +79,22 @@
 		E7129EB616D63C12002AD763 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E7129FB216D64CF4002AD763 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		E7129FB416D68A4E002AD763 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		E7129FBA16D690B7002AD763 /* KKITunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesViewController.h; sourceTree = "<group>"; };
-		E7129FBB16D690B7002AD763 /* KKITunesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesViewController.m; sourceTree = "<group>"; };
-		E7129FBC16D690B7002AD763 /* KKITunesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKITunesViewController.xib; sourceTree = "<group>"; };
+		E748141C16DBA18E009230F0 /* KKITunesSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesSearch.h; sourceTree = "<group>"; };
+		E748141D16DBA18E009230F0 /* KKITunesSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesSearch.m; sourceTree = "<group>"; };
+		E748141F16DBA18E009230F0 /* KKITunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesViewController.h; sourceTree = "<group>"; };
+		E748142016DBA18E009230F0 /* KKITunesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesViewController.m; sourceTree = "<group>"; };
+		E748142116DBA18E009230F0 /* KKITunesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKITunesViewController.xib; sourceTree = "<group>"; };
+		E748142316DBA18E009230F0 /* KKITunesAppProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesAppProduct.h; sourceTree = "<group>"; };
+		E748142416DBA18E009230F0 /* KKITunesAppProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesAppProduct.m; sourceTree = "<group>"; };
+		E748142516DBA18E009230F0 /* KKITunesMusicProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesMusicProduct.h; sourceTree = "<group>"; };
+		E748142616DBA18E009230F0 /* KKITunesMusicProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesMusicProduct.m; sourceTree = "<group>"; };
+		E748142716DBA18E009230F0 /* KKITunesProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesProduct.h; sourceTree = "<group>"; };
+		E748142816DBA18E009230F0 /* KKITunesProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesProduct.m; sourceTree = "<group>"; };
+		E748142916DBA18E009230F0 /* KKITunesProductsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesProductsCollection.h; sourceTree = "<group>"; };
+		E748142A16DBA18E009230F0 /* KKITunesProductsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesProductsCollection.m; sourceTree = "<group>"; };
+		E748143216DBA1BA009230F0 /* KKIPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKIPadViewController.h; sourceTree = "<group>"; };
+		E748143316DBA1BA009230F0 /* KKIPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKIPadViewController.m; sourceTree = "<group>"; };
+		E748143616DBA1CF009230F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KKIPadViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +146,9 @@
 			children = (
 				E7129E7216D63706002AD763 /* KKAppDelegate.h */,
 				E7129E7316D63706002AD763 /* KKAppDelegate.m */,
+				E748143216DBA1BA009230F0 /* KKIPadViewController.h */,
+				E748143316DBA1BA009230F0 /* KKIPadViewController.m */,
+				E748143516DBA1CF009230F0 /* KKIPadViewController.xib */,
 				E7129FB116D64CF4002AD763 /* Resources */,
 				E7129E6A16D63706002AD763 /* Supporting Files */,
 			);
@@ -161,11 +181,9 @@
 		E7129E9A16D63BF2002AD763 /* KKITunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				E7129E9B16D63BF2002AD763 /* KKITunesSearch.h */,
-				E7129E9C16D63BF2002AD763 /* KKITunesSearch.m */,
-				E7129FBA16D690B7002AD763 /* KKITunesViewController.h */,
-				E7129FBB16D690B7002AD763 /* KKITunesViewController.m */,
-				E7129FBC16D690B7002AD763 /* KKITunesViewController.xib */,
+				E748141B16DBA18E009230F0 /* Classes */,
+				E748141E16DBA18E009230F0 /* Controllers */,
+				E748142216DBA18E009230F0 /* Models */,
 			);
 			name = KKITunesSearch;
 			path = ../KKITunesSearch;
@@ -223,6 +241,40 @@
 				E7129FB216D64CF4002AD763 /* placeholder.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E748141B16DBA18E009230F0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E748141C16DBA18E009230F0 /* KKITunesSearch.h */,
+				E748141D16DBA18E009230F0 /* KKITunesSearch.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E748141E16DBA18E009230F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E748141F16DBA18E009230F0 /* KKITunesViewController.h */,
+				E748142016DBA18E009230F0 /* KKITunesViewController.m */,
+				E748142116DBA18E009230F0 /* KKITunesViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E748142216DBA18E009230F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E748142316DBA18E009230F0 /* KKITunesAppProduct.h */,
+				E748142416DBA18E009230F0 /* KKITunesAppProduct.m */,
+				E748142516DBA18E009230F0 /* KKITunesMusicProduct.h */,
+				E748142616DBA18E009230F0 /* KKITunesMusicProduct.m */,
+				E748142716DBA18E009230F0 /* KKITunesProduct.h */,
+				E748142816DBA18E009230F0 /* KKITunesProduct.m */,
+				E748142916DBA18E009230F0 /* KKITunesProductsCollection.h */,
+				E748142A16DBA18E009230F0 /* KKITunesProductsCollection.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +337,8 @@
 				E7129F5216D63C12002AD763 /* LICENSE in Resources */,
 				E7129F5316D63C12002AD763 /* README.md in Resources */,
 				E7129FB316D64CF4002AD763 /* placeholder.png in Resources */,
-				E7129FBE16D690B7002AD763 /* KKITunesViewController.xib in Resources */,
+				E748142D16DBA18E009230F0 /* KKITunesViewController.xib in Resources */,
+				E748143716DBA1CF009230F0 /* KKIPadViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +351,6 @@
 			files = (
 				E7129E7016D63706002AD763 /* main.m in Sources */,
 				E7129E7416D63706002AD763 /* KKAppDelegate.m in Sources */,
-				E7129E9D16D63BF2002AD763 /* KKITunesSearch.m in Sources */,
 				E7129F4816D63C12002AD763 /* AFHTTPClient.m in Sources */,
 				E7129F4916D63C12002AD763 /* AFHTTPRequestOperation.m in Sources */,
 				E7129F4A16D63C12002AD763 /* AFImageRequestOperation.m in Sources */,
@@ -308,7 +360,13 @@
 				E7129F4E16D63C12002AD763 /* AFURLConnectionOperation.m in Sources */,
 				E7129F4F16D63C12002AD763 /* AFXMLRequestOperation.m in Sources */,
 				E7129F5016D63C12002AD763 /* UIImageView+AFNetworking.m in Sources */,
-				E7129FBD16D690B7002AD763 /* KKITunesViewController.m in Sources */,
+				E748142B16DBA18E009230F0 /* KKITunesSearch.m in Sources */,
+				E748142C16DBA18E009230F0 /* KKITunesViewController.m in Sources */,
+				E748142E16DBA18E009230F0 /* KKITunesAppProduct.m in Sources */,
+				E748142F16DBA18E009230F0 /* KKITunesMusicProduct.m in Sources */,
+				E748143016DBA18E009230F0 /* KKITunesProduct.m in Sources */,
+				E748143116DBA18E009230F0 /* KKITunesProductsCollection.m in Sources */,
+				E748143416DBA1BA009230F0 /* KKIPadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +379,14 @@
 				E7129E6D16D63706002AD763 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E748143516DBA1CF009230F0 /* KKIPadViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E748143616DBA1CF009230F0 /* en */,
+			);
+			name = KKIPadViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -382,7 +448,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KKITunesSearchExample/KKITunesSearchExample-Prefix.pch";
 				INFOPLIST_FILE = "KKITunesSearchExample/KKITunesSearchExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,7 +461,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KKITunesSearchExample/KKITunesSearchExample-Prefix.pch";
 				INFOPLIST_FILE = "KKITunesSearchExample/KKITunesSearchExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

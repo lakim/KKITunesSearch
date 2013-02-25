@@ -24,33 +24,46 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
 
 #pragma mark View lifecycle
 
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    self.products = [[KKITunesProductsCollection alloc] init];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 
     [super viewDidAppear:animated];
-    [self addKeyboardObservers];
+    
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self addKeyboardObservers];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
 
     [super viewDidDisappear:animated];
-    [self removeKeyboardObservers];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self removeKeyboardObservers];
+    }
 }
 
 #pragma mark Accessors
 
-- (KKITunesSearchType)searchType {
+- (KKITunesProductType)searchType {
     
     if (self.view) {
         switch (self.segmentedControl.selectedSegmentIndex) {
             case 0: // Apps
-                return KKITunesSearchTypeApps;
+                return KKITunesProductTypeApps;
             case 1: // Music
-                return KKITunesSearchTypeMusic;
+                return KKITunesProductTypeMusic;
             default:;
         }
     }
-    return KKITunesSearchTypeAll;
+    return KKITunesProductTypeAll;
 }
 
 #pragma mark Keyboard
@@ -87,9 +100,19 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
 
 #pragma mark UITableViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return self.products.sectionsCount;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return [self.products titleForSection:section];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.results.count;
+    return [self.products numberOfProductsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -102,9 +125,9 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
         cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     
-    NSDictionary *result = self.results[indexPath.row];
-    cell.textLabel.text = result[@"trackName"];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:result[@"artworkUrl60"]] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    KKITunesProduct *product = [self.products productAtIndexPath:indexPath];
+    cell.textLabel.text = product.title;
+    [cell.imageView setImageWithURL:product.thumbnailURL placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return cell;
 }
@@ -113,13 +136,21 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if ([self.delegate respondsToSelector:@selector(iTunesViewController:didSelectProduct:)]) {
+        KKITunesProduct *product = [self.products productAtIndexPath:indexPath];
+        [self.delegate iTunesViewController:self didSelectProduct:product];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+
     if (![SKStoreProductViewController class]) return;
     
-    NSDictionary *result = self.results[indexPath.row];
+    KKITunesProduct *product = [self.products productAtIndexPath:indexPath];
     
     SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
     productViewController.delegate = self;
-    [productViewController loadProductWithParameters:@{ SKStoreProductParameterITunesItemIdentifier: result[@"trackId"] }
+    [productViewController loadProductWithParameters:@{ SKStoreProductParameterITunesItemIdentifier: product.id }
                                      completionBlock:^(BOOL result, NSError *error) {
                                          if (result) {
                                              [self presentViewController:productViewController animated:YES completion:nil];
@@ -180,16 +211,15 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
     if (self.searchBar.text.length < kKKViewControllerMinimumLength) return;
     
     [self.activityIndicator startAnimating];
-    [[KKITunesSearch sharedClient] search:self.searchBar.text
-                                 withType:self.searchType
-                                  success:^(NSUInteger count, NSArray *results) {
-                                      self.results = results;
-                                      [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-                                      [self.tableView setContentOffset:CGPointZero animated:YES];
-                                      [self.activityIndicator stopAnimating];
-                                  } failure:^(NSError *error) {
-                                      [self.activityIndicator stopAnimating];
-                                  }];
+    [self.products search:self.searchBar.text
+                 withType:self.searchType
+                  success:^() {
+                      [self.tableView reloadData];
+                      [self.tableView setContentOffset:CGPointZero animated:YES];
+                      [self.activityIndicator stopAnimating];
+                  } failure:^(NSError *error) {
+                      [self.activityIndicator stopAnimating];
+                  }];
 }
 
 #pragma mark UISegmentedControl actions

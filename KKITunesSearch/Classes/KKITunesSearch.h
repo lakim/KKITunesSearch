@@ -10,10 +10,10 @@
 #import "AFNetworking.h"
 
 typedef enum {
-    KKITunesSearchTypeAll,
-    KKITunesSearchTypeApps,
-    KKITunesSearchTypeMusic
-} KKITunesSearchType;
+    KKITunesProductTypeAll,
+    KKITunesProductTypeApps,
+    KKITunesProductTypeMusic
+} KKITunesProductType;
 
 @interface KKITunesSearch : AFHTTPClient
 
@@ -27,7 +27,7 @@ typedef enum {
                  failure:(void(^)(NSError *error))failure;
 
 - (void)search:(NSString *)term
-      withType:(KKITunesSearchType)type
+      withType:(KKITunesProductType)type
        success:(void(^)(NSUInteger count, NSArray *results))success
        failure:(void(^)(NSError *error))failure;
 

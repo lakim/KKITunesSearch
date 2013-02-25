@@ -9,14 +9,18 @@
 #import "KKAppDelegate.h"
 
 #import "KKITunesViewController.h"
+#import "KKIPadViewController.h"
 
 @implementation KKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[KKITunesViewController alloc] initWithNibName:@"KKViewController" bundle:nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[KKITunesViewController alloc] initWithNibName:@"KKViewController" bundle:nil];
+    } else {
+        self.viewController = [[KKIPadViewController alloc] initWithNibName:NSStringFromClass([KKIPadViewController class]) bundle:nil];
+    }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
