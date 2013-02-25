@@ -10,10 +10,11 @@
 
 @interface KKITunesProductsCollection ()
 
-@property (strong, nonatomic) NSMutableArray *products;
-@property (strong, nonatomic) NSMutableArray *productsBySection;
+@property (strong, nonatomic) NSArray *products;
+@property (strong, nonatomic) NSArray *sections;
 
 - (void)setProductsWithResults:(NSArray *)results;
+- (NSInteger)availableSectionsCount;
 
 @end
 
@@ -39,24 +40,37 @@
 
 - (void)setProductsWithResults:(NSArray *)results {
     
-    self.productsBySection = [NSMutableArray array];
-    for (NSInteger i = 0; i < self.sectionsCount; i++) {
-        [self.productsBySection addObject:[NSMutableArray array]];
+    NSMutableArray *products = [NSMutableArray array];
+    NSMutableArray *sections = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < self.availableSectionsCount; i++) {
+        NSDictionary *section = @{
+            @"section": [NSNumber numberWithInteger:i],
+            @"products": [NSMutableArray array]
+        };
+        [sections addObject:section];
     }
     
     for (NSDictionary *result in results) {
         KKITunesProduct *product = [KKITunesProduct productWithResult:result];
         
-        [self.products addObject:product];
+        [products addObject:product];
         for (NSNumber *section in product.sections) {
-            [self.productsBySection[section.integerValue] addObject:product];
+            [sections[section.integerValue][@"products"] addObject:product];
         }
     }
+    
+    self.products = [NSArray arrayWithArray:products];
+    // Remove empty sections
+    NSIndexSet *nonEmptyIndexes = [sections indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [obj[@"products"] count] > 0;
+    }];
+    self.sections = [sections objectsAtIndexes:nonEmptyIndexes];
 }
 
 #pragma mark Accessors
 
-- (NSInteger)sectionsCount {
+- (NSInteger)availableSectionsCount {
     
     switch (self.type) {
         case KKITunesProductTypeApps:
@@ -68,12 +82,19 @@
     }
 }
 
-- (NSInteger)numberOfProductsInSection:(NSInteger)section {
+- (NSInteger)sectionsCount {
     
-    return [self.productsBySection[section] count];
+    return self.sections.count;
 }
 
-- (NSString *)titleForSection:(NSInteger)section {
+- (NSInteger)numberOfProductsInSection:(NSInteger)section {
+    
+    return [self.sections[section][@"products"] count];
+}
+
+- (NSString *)titleForSection:(NSInteger)index {
+    
+    NSInteger section = [self.sections[index][@"section"] integerValue];
     
     switch (self.type) {
         case KKITunesProductTypeApps:
@@ -105,9 +126,7 @@
 
 - (KKITunesProduct *)productAtIndexPath:(NSIndexPath *)indexPath {
     
-    return self.productsBySection[indexPath.section][indexPath.row];
+    return self.sections[indexPath.section][@"products"][indexPath.row];
 }
-
-
 
 @end
