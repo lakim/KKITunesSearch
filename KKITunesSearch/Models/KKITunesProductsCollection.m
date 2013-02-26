@@ -52,11 +52,13 @@
     }
     
     for (NSDictionary *result in results) {
-        KKITunesProduct *product = [KKITunesProduct productWithResult:result];
         
-        [products addObject:product];
-        if (product.section != KKITunesProductSectionNone) {
-            [sections[product.section][@"products"] addObject:product];
+        KKITunesProduct *product = [KKITunesProduct productWithResult:result];
+        if (![products containsObject:product]) {
+            [products addObject:product];
+            if (product.section != KKITunesProductSectionNone) {
+                [sections[product.section][@"products"] addObject:product];
+            }
         }
     }
     

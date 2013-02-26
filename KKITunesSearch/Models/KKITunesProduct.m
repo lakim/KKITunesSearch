@@ -47,4 +47,9 @@ NSInteger const KKITunesProductSectionNone = -1;
     return KKITunesProductSectionNone;
 }
 
+- (BOOL)isEqual:(KKITunesProduct *)product {
+    
+    return (self == product) || [self.id isEqual:product.id];
+}
+
 @end

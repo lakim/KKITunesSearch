@@ -38,5 +38,6 @@ typedef enum {
 + (Class)productClassFromResult:(NSDictionary *)result;
 - (KKITunesProductSection)sectionFromResult:(NSDictionary *)result;
 - (id)initWithResult:(NSDictionary *)result;
+- (BOOL)isEqual:(KKITunesProduct *)product;
 
 @end
