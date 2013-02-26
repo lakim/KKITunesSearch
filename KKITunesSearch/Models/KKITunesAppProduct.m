@@ -21,17 +21,11 @@
         return KKITunesAppsSectionUniversal;
     }
     
-    NSArray *devices = result[@"supportedDevices"];
-    
-    if ([devices indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        return [obj rangeOfString:@"iPad"].location != NSNotFound;
-    }] != NSNotFound) {
+    if ([result[@"ipadScreenshotUrls"] count] > 0) {
         return KKITunesAppsSectionIPad;
     }
     
-    if ([devices indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        return ([obj rangeOfString:@"iPhone"].location != NSNotFound) || [obj isEqual:@"all"];
-    }] != NSNotFound) {
+    if ([result[@"screenshotUrls"] count] > 0) {
         return KKITunesAppsSectionIPhone;
     }
     
