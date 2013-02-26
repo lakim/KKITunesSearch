@@ -108,7 +108,7 @@ static NSInteger kKKITunesSearchLimit = 3;
     switch (type) {
         case KKITunesProductTypeApps:
             entities = @[ @"iPadSoftware", @"software", @"macSoftware" ];
-            params[@"songTerm"] = @"attribute";
+            params[@"attribute"] = @"songTerm";
             break;
         case KKITunesProductTypeMusic:
             entities = @[ @"musicArtist", @"album", @"song" ];
