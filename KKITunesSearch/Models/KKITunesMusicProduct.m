@@ -10,31 +10,41 @@
 
 @implementation KKITunesMusicProduct
 
-- (NSSet *)sectionsFromResult:(NSDictionary *)result {
-    
-    NSMutableSet *sections = [NSMutableSet set];
+- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
     if ([result[@"wrapperType"] isEqual:@"artist"]) {
-        [sections addObject:[NSNumber numberWithInteger:KKITunesMusicSectionArtist]];
-    } else if ([result[@"wrapperType"] isEqual:@"album"]) {
-        [sections addObject:[NSNumber numberWithInteger:KKITunesMusicSectionAlbum]];
-    } else if ([result[@"wrapperType"] isEqual:@"track"]) {
-        [sections addObject:[NSNumber numberWithInteger:KKITunesMusicSectionTrack]];
+        return KKITunesMusicSectionArtist;
     }
     
-    return sections;
+    if ([result[@"wrapperType"] isEqual:@"album"]) {
+        return KKITunesMusicSectionAlbum;
+    }
+    
+    if ([result[@"wrapperType"] isEqual:@"track"]) {
+        return KKITunesMusicSectionTrack;
+    }
+    
+    NSLog(@"%@: Section not found for music product:", NSStringFromSelector(_cmd));
+    NSLog(@"%@", result);
+    return KKITunesProductSectionNone;
 }
 
 - (id)initWithResult:(NSDictionary *)result {
     
     self = [super initWithResult:result];
     if (self) {
-        if ([self.sections containsObject:[NSNumber numberWithInteger:KKITunesMusicSectionArtist]]) {
-            self.title = result[@"artistName"];
-        } else if ([self.sections containsObject:[NSNumber numberWithInteger:KKITunesMusicSectionAlbum]]) {
-            self.title = result[@"collectionName"];
-        } else if ([self.sections containsObject:[NSNumber numberWithInteger:KKITunesMusicSectionTrack]]) {
-            self.title = result[@"trackName"];
+        
+        switch (self.section) {
+            case KKITunesMusicSectionArtist:
+                self.title = result[@"artistName"];
+                break;
+            case KKITunesMusicSectionAlbum:
+                self.title = result[@"collectionName"];
+                break;
+            case KKITunesMusicSectionTrack:
+                self.title = result[@"trackName"];
+                break;
+            default:;
         }
     }
     return self;

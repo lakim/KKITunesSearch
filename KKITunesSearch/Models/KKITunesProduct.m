@@ -8,6 +8,8 @@
 
 #import "KKITunesProduct.h"
 
+NSInteger const KKITunesProductSectionNone = -1;
+
 @implementation KKITunesProduct
 
 + (id)productWithResult:(NSDictionary *)result {
@@ -33,16 +35,16 @@
         self.id = result[@"trackId"];
         self.title = result[@"trackName"];
         self.thumbnailURL = [NSURL URLWithString:result[@"artworkUrl60"]];
-        self.sections = [self sectionsFromResult:result];
+        self.section = [self sectionFromResult:result];
     }
     return self;
 }
 
-- (NSSet *)sectionsFromResult:(NSDictionary *)result {
+- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return nil;
+    return KKITunesProductSectionNone;
 }
 
 @end

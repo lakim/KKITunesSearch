@@ -52,7 +52,7 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
 
 #pragma mark Accessors
 
-- (KKITunesProductType)searchType {
+- (KKITunesProductType)productType {
     
     if (self.view) {
         switch (self.segmentedControl.selectedSegmentIndex) {
@@ -107,7 +107,34 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    return [self.products titleForSection:section];
+    switch (self.productType) {
+        case KKITunesProductTypeApps:
+            switch (section) {
+                case KKITunesAppsSectionIPad:
+                    return NSLocalizedString(@"iPad", nil);
+                case KKITunesAppsSectionUniversal:
+                    return NSLocalizedString(@"iPad/iPhone", nil);
+                case KKITunesAppsSectionIPhone:
+                    return NSLocalizedString(@"iPhone", nil);
+                case KKITunesAppsSectionMacOS:
+                    return NSLocalizedString(@"Mac OS", nil);
+                default:
+                    return nil;
+            }
+        case KKITunesProductTypeMusic:
+            switch (section) {
+                case KKITunesMusicSectionArtist:
+                    return NSLocalizedString(@"Artist", nil);
+                case KKITunesMusicSectionAlbum:
+                    return NSLocalizedString(@"Album", nil);
+                case KKITunesMusicSectionTrack:
+                    return NSLocalizedString(@"Track", nil);
+                default:
+                    return nil;
+            }
+        default:
+            return nil;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -212,7 +239,7 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
     
     [self.activityIndicator startAnimating];
     [self.products search:self.searchBar.text
-                 withType:self.searchType
+                 withType:self.productType
                   success:^() {
                       [self.tableView reloadData];
                       [self.tableView setContentOffset:CGPointZero animated:YES];

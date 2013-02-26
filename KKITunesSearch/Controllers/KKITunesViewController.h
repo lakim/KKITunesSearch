@@ -30,7 +30,7 @@
 @property (weak, nonatomic) id<KKITunesViewControllerDelegate> delegate;
 @property (strong, nonatomic) KKITunesProductsCollection *products;
 @property (strong, nonatomic) NSTimer *timer;
-@property (readonly, nonatomic) KKITunesProductType searchType;
+@property (readonly, nonatomic) KKITunesProductType productType;
 
 - (void)scheduleSearch;
 - (void)unscheduleSearch;

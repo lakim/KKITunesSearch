@@ -10,33 +10,34 @@
 
 @implementation KKITunesAppProduct
 
-- (NSSet *)sectionsFromResult:(NSDictionary *)result {
-    
-    NSMutableSet *sections = [NSMutableSet set];
+- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
     if ([result[@"kind"] isEqual:@"mac-software"]) {
         
-        [sections addObject:[NSNumber numberWithInteger:KKITunesAppsSectionMacOS]];
-    } else {
-        NSArray *devices = result[@"supportedDevices"];
-        
-        if ([devices containsObject:@"all"]) {
-            [sections addObject:[NSNumber numberWithInteger:KKITunesAppsSectionIPad]];
-            [sections addObject:[NSNumber numberWithInteger:KKITunesAppsSectionIPhone]];
-        }
-        if ([devices indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-            return [obj rangeOfString:@"iPad"].location != NSNotFound;
-        }] != NSNotFound) {
-            [sections addObject:[NSNumber numberWithInteger:KKITunesAppsSectionIPad]];
-        }
-        if ([devices indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-            return [obj rangeOfString:@"iPhone"].location != NSNotFound;
-        }] != NSNotFound) {
-            [sections addObject:[NSNumber numberWithInteger:KKITunesAppsSectionIPhone]];
-        }
+        return KKITunesAppsSectionMacOS;
+    }
+
+    if ([result[@"features"] containsObject:@"iosUniversal"]) {
+        return KKITunesAppsSectionUniversal;
     }
     
-    return sections;
+    NSArray *devices = result[@"supportedDevices"];
+    
+    if ([devices indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [obj rangeOfString:@"iPad"].location != NSNotFound;
+    }] != NSNotFound) {
+        return KKITunesAppsSectionIPad;
+    }
+    
+    if ([devices indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return ([obj rangeOfString:@"iPhone"].location != NSNotFound) || [obj isEqual:@"all"];
+    }] != NSNotFound) {
+        return KKITunesAppsSectionIPhone;
+    }
+    
+    NSLog(@"%@: Section not found for app product:", NSStringFromSelector(_cmd));
+    NSLog(@"%@", result);
+    return KKITunesProductSectionNone;
 }
 
 @end

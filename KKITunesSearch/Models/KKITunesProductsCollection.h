@@ -16,7 +16,7 @@
 
 - (NSInteger)sectionsCount;
 - (NSInteger)numberOfProductsInSection:(NSInteger)section;
-- (NSString *)titleForSection:(NSInteger)section;
+- (KKITunesProductSection)sectionAtIndex:(NSInteger)section;
 - (KKITunesProduct *)productAtIndexPath:(NSIndexPath *)indexPath;
 
 - (void)search:(NSString *)term

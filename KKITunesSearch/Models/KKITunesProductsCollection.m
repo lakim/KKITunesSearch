@@ -55,8 +55,8 @@
         KKITunesProduct *product = [KKITunesProduct productWithResult:result];
         
         [products addObject:product];
-        for (NSNumber *section in product.sections) {
-            [sections[section.integerValue][@"products"] addObject:product];
+        if (product.section != KKITunesProductSectionNone) {
+            [sections[product.section][@"products"] addObject:product];
         }
     }
     
@@ -91,36 +91,9 @@
     return [self.sections[section][@"products"] count];
 }
 
-- (NSString *)titleForSection:(NSInteger)index {
+- (KKITunesProductSection)sectionAtIndex:(NSInteger)section {
     
-    NSInteger section = [self.sections[index][@"section"] integerValue];
-    
-    switch (self.type) {
-        case KKITunesProductTypeApps:
-            switch (section) {
-                case KKITunesAppsSectionIPad:
-                    return NSLocalizedString(@"iPad", nil);
-                case KKITunesAppsSectionIPhone:
-                    return NSLocalizedString(@"iPhone", nil);
-                case KKITunesAppsSectionMacOS:
-                    return NSLocalizedString(@"Mac OS", nil);
-                default:
-                    return nil;
-            }
-        case KKITunesProductTypeMusic:
-            switch (section) {
-                case KKITunesMusicSectionArtist:
-                    return NSLocalizedString(@"Artist", nil);
-                case KKITunesMusicSectionAlbum:
-                    return NSLocalizedString(@"Album", nil);
-                case KKITunesMusicSectionTrack:
-                    return NSLocalizedString(@"Track", nil);
-                default:
-                    return nil;
-            }
-        default:
-            return nil;
-    }
+    return [self.sections[section][@"section"] integerValue];
 }
 
 - (KKITunesProduct *)productAtIndexPath:(NSIndexPath *)indexPath {
