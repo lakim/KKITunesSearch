@@ -156,7 +156,11 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
     
     KKITunesProduct *product = [self.products productAtIndexPath:indexPath];
     cell.textLabel.text = product.title;
-    [cell.imageView setImageWithURL:product.thumbnailURL placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    if (product.thumbnailURL) {
+        [cell.imageView setImageWithURL:product.thumbnailURL placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    } else {
+        cell.imageView.image = nil;
+    }
     
     return cell;
 }
