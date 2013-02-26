@@ -16,7 +16,7 @@
         return KKITunesMusicSectionArtist;
     }
     
-    if ([result[@"wrapperType"] isEqual:@"album"]) {
+    if ([result[@"wrapperType"] isEqual:@"collection"]) {
         return KKITunesMusicSectionAlbum;
     }
     
