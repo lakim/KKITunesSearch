@@ -13,6 +13,7 @@
 		E748141716DBA170009230F0 /* KKITunesMusicProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E748140F16DBA170009230F0 /* KKITunesMusicProduct.m */; };
 		E748141816DBA170009230F0 /* KKITunesProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E748141116DBA170009230F0 /* KKITunesProduct.m */; };
 		E748141916DBA170009230F0 /* KKITunesProductsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = E748141316DBA170009230F0 /* KKITunesProductsCollection.m */; };
+		E748143D16DD2110009230F0 /* KKITunesMovieProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E748143C16DD210F009230F0 /* KKITunesMovieProduct.m */; };
 		E7B3080F16CD3A6200AFB34D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3080E16CD3A6200AFB34D /* Foundation.framework */; };
 		E7B3081E16CD3A6200AFB34D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3081D16CD3A6200AFB34D /* SenTestingKit.framework */; };
 		E7B3082016CD3A6200AFB34D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B3081F16CD3A6200AFB34D /* UIKit.framework */; };
@@ -63,6 +64,8 @@
 		E748141216DBA170009230F0 /* KKITunesProductsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesProductsCollection.h; sourceTree = "<group>"; };
 		E748141316DBA170009230F0 /* KKITunesProductsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesProductsCollection.m; sourceTree = "<group>"; };
 		E748143816DBA9D8009230F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E748143B16DD210F009230F0 /* KKITunesMovieProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesMovieProduct.h; sourceTree = "<group>"; };
+		E748143C16DD210F009230F0 /* KKITunesMovieProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesMovieProduct.m; sourceTree = "<group>"; };
 		E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKKITunesSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B3080E16CD3A6200AFB34D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7B3081C16CD3A6200AFB34D /* KKITunesSearchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKITunesSearchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +129,8 @@
 				E748140D16DBA170009230F0 /* KKITunesAppProduct.m */,
 				E748140E16DBA170009230F0 /* KKITunesMusicProduct.h */,
 				E748140F16DBA170009230F0 /* KKITunesMusicProduct.m */,
+				E748143B16DD210F009230F0 /* KKITunesMovieProduct.h */,
+				E748143C16DD210F009230F0 /* KKITunesMovieProduct.m */,
 				E748141216DBA170009230F0 /* KKITunesProductsCollection.h */,
 				E748141316DBA170009230F0 /* KKITunesProductsCollection.m */,
 			);
@@ -321,6 +326,7 @@
 				E748141716DBA170009230F0 /* KKITunesMusicProduct.m in Sources */,
 				E748141816DBA170009230F0 /* KKITunesProduct.m in Sources */,
 				E748141916DBA170009230F0 /* KKITunesProductsCollection.m in Sources */,
+				E748143D16DD2110009230F0 /* KKITunesMovieProduct.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

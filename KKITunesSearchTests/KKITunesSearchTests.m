@@ -57,4 +57,23 @@
     }];
 }
 
+- (void)testSearchMovies {
+    
+    [self runTestWithBlock:^{
+        
+        [[KKITunesSearch sharedClient] search:@"Dexter"
+                                     withType:KKITunesProductTypeMovies
+                                      success:^(NSUInteger count, NSArray *results) {
+                                          STAssertTrue(count > 0, @"Count should not be zero");
+                                          STAssertTrue(results.count > 0, @"Results array should contain objects");
+                                          NSDictionary *result = results[0];
+                                          STAssertTrue([result isKindOfClass:[NSDictionary class]], @"Result should be a dictionary");
+                                          [self blockTestCompleted];
+                                      } failure:^(NSError *error) {
+                                          STFail(@"Couldn't search movies");
+                                          [self blockTestCompleted];
+                                      }];
+    }];
+}
+
 @end

@@ -78,6 +78,8 @@
             return KKITunesAppsSectionCount;
         case KKITunesProductTypeMusic:
             return KKITunesMusicSectionCount;
+        case KKITunesProductTypeMovies:
+            return KKITunesMoviesSectionCount;
         default:
             return 0;
     }

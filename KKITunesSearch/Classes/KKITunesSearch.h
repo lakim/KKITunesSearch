@@ -12,7 +12,9 @@
 typedef enum {
     KKITunesProductTypeAll,
     KKITunesProductTypeApps,
-    KKITunesProductTypeMusic
+    KKITunesProductTypeMusic,
+    KKITunesProductTypeMovies,
+    KKITunesProductTypeBooks
 } KKITunesProductType;
 
 @interface KKITunesSearch : AFHTTPClient

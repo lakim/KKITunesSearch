@@ -22,8 +22,15 @@ NSInteger const KKITunesProductSectionNone = -1;
     if ([result[@"kind"] isEqual:@"software"] || [result[@"kind"] isEqual:@"mac-software"]) {
         return NSClassFromString(@"KKITunesAppProduct");
     }
-    if ([result[@"wrapperType"] isEqual:@"artist"] || [result[@"wrapperType"] isEqual:@"collection"] || [result[@"wrapperType"] isEqual:@"track"]) {
+    if ([result[@"wrapperType"] isEqual:@"artist"] ||
+        ([result[@"wrapperType"] isEqual:@"collection"] && [result[@"collectionType"] isEqual:@"Album"]) ||
+        ([result[@"wrapperType"] isEqual:@"track"] && [result[@"kind"] isEqual:@"song"])) {
         return NSClassFromString(@"KKITunesMusicProduct");
+    }
+    if (([result[@"wrapperType"] isEqual:@"collection"] && [result[@"collectionType"] isEqual:@"TV Season"]) ||
+        [result[@"kind"] isEqual:@"tv-episode"] ||
+        [result[@"kind"] isEqual:@"feature-movie"]) {
+        return NSClassFromString(@"KKITunesMovieProduct");
     }
     return [self class];
 }

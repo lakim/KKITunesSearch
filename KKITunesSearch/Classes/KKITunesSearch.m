@@ -8,7 +8,7 @@
 
 #import "KKITunesSearch.h"
 
-static NSString *kKKITunesSearchBaseURL = @"https://itunes.apple.com/search";
+static NSString *kKKITunesSearchBaseURL = @"http://itunes.apple.com/search";
 static NSString *kKKITunesSearchErrorDomain = @"com.kimkode.KKITunesSearch";
 static NSInteger kKKITunesSearchErrorCode = 1;
 static NSInteger kKKITunesSearchLimit = 3;
@@ -112,8 +112,11 @@ static NSInteger kKKITunesSearchLimit = 3;
             break;
         case KKITunesProductTypeMusic:
             entities = @[ @"musicArtist", @"album", @"song" ];
-        default:
             break;
+        case KKITunesProductTypeMovies:
+            entities = @[ @"movie", @"tvSeason", @"tvEpisode", @"shortFilm" ];
+            break;
+        default:;
     }
     
     __block NSInteger batchResultsCount = 0;

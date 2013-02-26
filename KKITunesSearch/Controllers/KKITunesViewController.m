@@ -60,6 +60,8 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
                 return KKITunesProductTypeApps;
             case 1: // Music
                 return KKITunesProductTypeMusic;
+            case 2: // Movies
+                return KKITunesProductTypeMovies;
             default:;
         }
     }
@@ -133,6 +135,20 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
                     return NSLocalizedString(@"Tracks", nil);
                 default:
                     return nil;
+            }
+        case KKITunesProductTypeMovies:
+            switch (section) {
+                case KKITunesMoviesSectionMovies:
+                    return NSLocalizedString(@"Movies", nil);
+                    break;
+                case KKITunesMoviesSectionTVSeasons:
+                    return NSLocalizedString(@"TV Seasons", nil);
+                    break;
+                case KKITunesMoviesSectionTVEpisodes:
+                    return NSLocalizedString(@"TV Episodes", nil);
+                    break;
+                default:
+                    break;
             }
         default:
             return nil;
