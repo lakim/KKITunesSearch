@@ -105,7 +105,9 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
     return self.products.sectionsCount;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)index {
+    
+    KKITunesProductSection section = [self.products sectionAtIndex:index];
     
     switch (self.productType) {
         case KKITunesProductTypeApps:
