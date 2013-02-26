@@ -124,11 +124,11 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
         case KKITunesProductTypeMusic:
             switch (section) {
                 case KKITunesMusicSectionArtist:
-                    return NSLocalizedString(@"Artist", nil);
+                    return NSLocalizedString(@"Artists", nil);
                 case KKITunesMusicSectionAlbum:
-                    return NSLocalizedString(@"Album", nil);
+                    return NSLocalizedString(@"Albums", nil);
                 case KKITunesMusicSectionTrack:
-                    return NSLocalizedString(@"Track", nil);
+                    return NSLocalizedString(@"Tracks", nil);
                 default:
                     return nil;
             }
