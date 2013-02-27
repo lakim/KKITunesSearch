@@ -62,6 +62,8 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
                 return KKITunesProductTypeMusic;
             case 2: // Movies
                 return KKITunesProductTypeMovies;
+            case 3: // Books
+                return KKITunesProductTypeBooks;
             default:;
         }
     }
@@ -150,6 +152,20 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
                 default:
                     break;
             }
+        case KKITunesProductTypeBooks:
+            switch (section) {
+                case KKITunesBooksSectionAuthor:
+                    return NSLocalizedString(@"Author", nil);
+                    break;
+                case KKITunesBooksSectionIBooks:
+                    return NSLocalizedString(@"iBooks", nil);
+                    break;
+                case KKITunesBooksSectionAudioBooks:
+                    return NSLocalizedString(@"Audio Books", nil);
+                    break;
+                default:
+                    break;
+            }
         default:
             return nil;
     }
@@ -168,6 +184,7 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        cell.imageView.clipsToBounds = YES;
     }
     
     KKITunesProduct *product = [self.products productAtIndexPath:indexPath];

@@ -30,6 +30,7 @@
 		E7129F5316D63C12002AD763 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E7129EB616D63C12002AD763 /* README.md */; };
 		E7129FB316D64CF4002AD763 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E7129FB216D64CF4002AD763 /* placeholder.png */; };
 		E7129FB516D68A4E002AD763 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7129FB416D68A4E002AD763 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E73C430C16DE50CC0072130B /* KKITunesBookProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E73C430B16DE50CC0072130B /* KKITunesBookProduct.m */; };
 		E748142B16DBA18E009230F0 /* KKITunesSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = E748141D16DBA18E009230F0 /* KKITunesSearch.m */; };
 		E748142C16DBA18E009230F0 /* KKITunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E748142016DBA18E009230F0 /* KKITunesViewController.m */; };
 		E748142D16DBA18E009230F0 /* KKITunesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E748142116DBA18E009230F0 /* KKITunesViewController.xib */; };
@@ -80,6 +81,8 @@
 		E7129EB616D63C12002AD763 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E7129FB216D64CF4002AD763 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		E7129FB416D68A4E002AD763 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E73C430A16DE50CC0072130B /* KKITunesBookProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesBookProduct.h; sourceTree = "<group>"; };
+		E73C430B16DE50CC0072130B /* KKITunesBookProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesBookProduct.m; sourceTree = "<group>"; };
 		E748141C16DBA18E009230F0 /* KKITunesSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesSearch.h; sourceTree = "<group>"; };
 		E748141D16DBA18E009230F0 /* KKITunesSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesSearch.m; sourceTree = "<group>"; };
 		E748141F16DBA18E009230F0 /* KKITunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesViewController.h; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				E748142616DBA18E009230F0 /* KKITunesMusicProduct.m */,
 				E748144216DD24E0009230F0 /* KKITunesMovieProduct.h */,
 				E748144316DD24E0009230F0 /* KKITunesMovieProduct.m */,
+				E73C430A16DE50CC0072130B /* KKITunesBookProduct.h */,
+				E73C430B16DE50CC0072130B /* KKITunesBookProduct.m */,
 				E748142916DBA18E009230F0 /* KKITunesProductsCollection.h */,
 				E748142A16DBA18E009230F0 /* KKITunesProductsCollection.m */,
 			);
@@ -373,6 +378,7 @@
 				E748143116DBA18E009230F0 /* KKITunesProductsCollection.m in Sources */,
 				E748143416DBA1BA009230F0 /* KKIPadViewController.m in Sources */,
 				E748144416DD24E1009230F0 /* KKITunesMovieProduct.m in Sources */,
+				E73C430C16DE50CC0072130B /* KKITunesBookProduct.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

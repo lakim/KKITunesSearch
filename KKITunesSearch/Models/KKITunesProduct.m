@@ -19,11 +19,12 @@ NSInteger const KKITunesProductSectionNone = -1;
 
 + (Class)productClassFromResult:(NSDictionary *)result {
     
+    // TODO: refactor in classes
     if ([result[@"kind"] isEqual:@"software"] || [result[@"kind"] isEqual:@"mac-software"]) {
         return NSClassFromString(@"KKITunesAppProduct");
     }
-    if ([result[@"wrapperType"] isEqual:@"artist"] ||
-        ([result[@"wrapperType"] isEqual:@"collection"] && [result[@"collectionType"] isEqual:@"Album"]) ||
+    if (([result[@"wrapperType"] isEqual:@"artist"] && [result[@"artistType"] isEqual:@"Artist"]) ||
+        ([result[@"wrapperType"] isEqual:@"collection"] && ([result[@"collectionType"] isEqual:@"Album"] || [result[@"collectionType"] isEqual:@"Compilation"])) ||
         ([result[@"wrapperType"] isEqual:@"track"] && [result[@"kind"] isEqual:@"song"])) {
         return NSClassFromString(@"KKITunesMusicProduct");
     }
@@ -32,7 +33,15 @@ NSInteger const KKITunesProductSectionNone = -1;
         [result[@"kind"] isEqual:@"feature-movie"]) {
         return NSClassFromString(@"KKITunesMovieProduct");
     }
-    return [self class];
+    if (([result[@"wrapperType"] isEqual:@"artist"] && [result[@"artistType"] isEqual:@"Author"]) ||
+        [result[@"kind"] isEqual:@"ebook"] ||
+        [result[@"wrapperType"] isEqual:@"audiobook"]) {
+        return NSClassFromString(@"KKITunesBookProduct");
+    }
+    
+    NSLog(@"%@: Class not found for result:", NSStringFromSelector(_cmd));
+    NSLog(@"%@", result);
+    return nil;
 }
 
 - (id)initWithResult:(NSDictionary *)result {

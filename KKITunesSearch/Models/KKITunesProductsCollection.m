@@ -54,7 +54,7 @@
     for (NSDictionary *result in results) {
         
         KKITunesProduct *product = [KKITunesProduct productWithResult:result];
-        if (![products containsObject:product]) {
+        if (product && ![products containsObject:product]) {
             [products addObject:product];
             if (product.section != KKITunesProductSectionNone) {
                 [sections[product.section][@"products"] addObject:product];
@@ -80,6 +80,8 @@
             return KKITunesMusicSectionCount;
         case KKITunesProductTypeMovies:
             return KKITunesMoviesSectionCount;
+        case KKITunesProductTypeBooks:
+            return KKITunesBooksSectionCount;
         default:
             return 0;
     }

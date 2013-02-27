@@ -116,6 +116,9 @@ static NSInteger kKKITunesSearchLimit = 3;
         case KKITunesProductTypeMovies:
             entities = @[ @"movie", @"tvSeason", @"tvEpisode", @"shortFilm" ];
             break;
+        case KKITunesProductTypeBooks:
+            entities = @[ @"ebookAuthor", @"ebook", @"audiobook" ];
+            break;
         default:;
     }
     

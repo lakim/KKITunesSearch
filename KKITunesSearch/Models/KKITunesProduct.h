@@ -34,6 +34,13 @@ typedef enum {
     KKITunesMoviesSectionCount = 3
 } KKITunesMoviesSection;
 
+typedef enum {
+    KKITunesBooksSectionAuthor = 0,
+    KKITunesBooksSectionIBooks = 1,
+    KKITunesBooksSectionAudioBooks = 2,
+    KKITunesBooksSectionCount = 3,
+} KKITunesBooksSection;
+
 @interface KKITunesProduct : NSObject
 
 @property (assign, nonatomic) KKITunesProductSection section;
