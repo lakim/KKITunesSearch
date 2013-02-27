@@ -49,9 +49,8 @@ typedef enum {
 @property (strong, nonatomic) NSURL *thumbnailURL;
 
 + (id)productWithResult:(NSDictionary *)result;
-+ (Class)productClassFromResult:(NSDictionary *)result;
-- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result;
-- (id)initWithResult:(NSDictionary *)result;
++ (KKITunesProductSection)sectionFromResult:(NSDictionary *)result;
+- (id)initWithResult:(NSDictionary *)result section:(KKITunesProductSection)section;
 - (BOOL)isEqual:(KKITunesProduct *)product;
 
 @end

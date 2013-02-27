@@ -10,9 +10,9 @@
 
 @implementation KKITunesBookProduct
 
-- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
++ (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
-    if ([result[@"wrapperType"] isEqual:@"artist"]) {
+    if ([result[@"wrapperType"] isEqual:@"artist"] && [result[@"artistType"] isEqual:@"Author"]) {
         return KKITunesBooksSectionAuthor;
     }
     
@@ -24,14 +24,12 @@
         return KKITunesBooksSectionAudioBooks;
     }
     
-    NSLog(@"%@: Section not found for book product:", NSStringFromSelector(_cmd));
-    NSLog(@"%@", result);
     return KKITunesProductSectionNone;
 }
 
-- (id)initWithResult:(NSDictionary *)result {
+- (id)initWithResult:(NSDictionary *)result section:(KKITunesProductSection)section {
     
-    self = [super initWithResult:result];
+    self = [super initWithResult:result section:section];
     if (self) {
         
         switch (self.section) {

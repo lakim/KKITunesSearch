@@ -14,29 +14,20 @@ NSInteger const KKITunesProductSectionNone = -1;
 
 + (id)productWithResult:(NSDictionary *)result {
     
-    return [[[self productClassFromResult:result] alloc] initWithResult:result];
-}
-
-+ (Class)productClassFromResult:(NSDictionary *)result {
+    NSArray *subclassesNames = @[
+        @"KKITunesAppProduct",
+        @"KKITunesMusicProduct",
+        @"KKITunesMovieProduct",
+        @"KKITunesBookProduct"
+    ];
     
-    // TODO: refactor in classes
-    if ([result[@"kind"] isEqual:@"software"] || [result[@"kind"] isEqual:@"mac-software"]) {
-        return NSClassFromString(@"KKITunesAppProduct");
-    }
-    if (([result[@"wrapperType"] isEqual:@"artist"] && [result[@"artistType"] isEqual:@"Artist"]) ||
-        ([result[@"wrapperType"] isEqual:@"collection"] && ([result[@"collectionType"] isEqual:@"Album"] || [result[@"collectionType"] isEqual:@"Compilation"])) ||
-        ([result[@"wrapperType"] isEqual:@"track"] && [result[@"kind"] isEqual:@"song"])) {
-        return NSClassFromString(@"KKITunesMusicProduct");
-    }
-    if (([result[@"wrapperType"] isEqual:@"collection"] && [result[@"collectionType"] isEqual:@"TV Season"]) ||
-        [result[@"kind"] isEqual:@"tv-episode"] ||
-        [result[@"kind"] isEqual:@"feature-movie"]) {
-        return NSClassFromString(@"KKITunesMovieProduct");
-    }
-    if (([result[@"wrapperType"] isEqual:@"artist"] && [result[@"artistType"] isEqual:@"Author"]) ||
-        [result[@"kind"] isEqual:@"ebook"] ||
-        [result[@"wrapperType"] isEqual:@"audiobook"]) {
-        return NSClassFromString(@"KKITunesBookProduct");
+    for (NSString *subclassName in subclassesNames) {
+        Class class = NSClassFromString(subclassName);
+        KKITunesProductSection section = [class sectionFromResult:result];
+        if (section != KKITunesProductSectionNone) {
+            // Pass the section to the initializer to avoid double pass
+            return [[class alloc] initWithResult:result section:section];
+        }
     }
     
     NSLog(@"%@: Class not found for result:", NSStringFromSelector(_cmd));
@@ -44,22 +35,20 @@ NSInteger const KKITunesProductSectionNone = -1;
     return nil;
 }
 
-- (id)initWithResult:(NSDictionary *)result {
+- (id)initWithResult:(NSDictionary *)result section:(KKITunesProductSection)section {
     
     self = [super init];
     if (self) {
         self.id = result[@"trackId"];
         self.title = result[@"trackName"];
         self.thumbnailURL = [NSURL URLWithString:result[@"artworkUrl60"]];
-        self.section = [self sectionFromResult:result];
+        self.section = section;
     }
     return self;
 }
 
-- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
++ (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return KKITunesProductSectionNone;
 }
 

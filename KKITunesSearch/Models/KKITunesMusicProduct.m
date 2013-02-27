@@ -10,28 +10,26 @@
 
 @implementation KKITunesMusicProduct
 
-- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
++ (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
-    if ([result[@"wrapperType"] isEqual:@"artist"]) {
+    if ([result[@"wrapperType"] isEqual:@"artist"] && [result[@"artistType"] isEqual:@"Artist"]) {
         return KKITunesMusicSectionArtist;
     }
     
-    if ([result[@"wrapperType"] isEqual:@"collection"]) {
+    if ([result[@"wrapperType"] isEqual:@"collection"] && ([result[@"collectionType"] isEqual:@"Album"] || [result[@"collectionType"] isEqual:@"Compilation"])) {
         return KKITunesMusicSectionAlbum;
     }
     
-    if ([result[@"wrapperType"] isEqual:@"track"]) {
+    if ([result[@"wrapperType"] isEqual:@"track"] && [result[@"kind"] isEqual:@"song"]) {
         return KKITunesMusicSectionTrack;
     }
     
-    NSLog(@"%@: Section not found for music product:", NSStringFromSelector(_cmd));
-    NSLog(@"%@", result);
     return KKITunesProductSectionNone;
 }
 
-- (id)initWithResult:(NSDictionary *)result {
+- (id)initWithResult:(NSDictionary *)result section:(KKITunesProductSection)section {
     
-    self = [super initWithResult:result];
+    self = [super initWithResult:result section:section];
     if (self) {
         
         switch (self.section) {

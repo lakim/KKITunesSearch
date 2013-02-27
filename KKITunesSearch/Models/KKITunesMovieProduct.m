@@ -10,13 +10,13 @@
 
 @implementation KKITunesMovieProduct
 
-- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
++ (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
     if ([result[@"kind"] isEqual:@"feature-movie"]) {
         return KKITunesMoviesSectionMovies;
     }
 
-    if ([result[@"wrapperType"] isEqual:@"collection"]) {
+    if ([result[@"wrapperType"] isEqual:@"collection"] && [result[@"collectionType"] isEqual:@"TV Season"]) {
         return KKITunesMoviesSectionTVSeasons;
     }
     
@@ -24,14 +24,12 @@
         return KKITunesMoviesSectionTVEpisodes;
     }
     
-    NSLog(@"%@: Section not found for music product:", NSStringFromSelector(_cmd));
-    NSLog(@"%@", result);
     return KKITunesProductSectionNone;
 }
 
-- (id)initWithResult:(NSDictionary *)result {
+- (id)initWithResult:(NSDictionary *)result section:(KKITunesProductSection)section {
     
-    self = [super initWithResult:result];
+    self = [super initWithResult:result section:section];
     if (self) {
         
         switch (self.section) {

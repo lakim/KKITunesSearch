@@ -10,7 +10,7 @@
 
 @implementation KKITunesAppProduct
 
-- (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
++ (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
     if ([result[@"kind"] isEqual:@"mac-software"]) {
         
@@ -29,8 +29,6 @@
         return KKITunesAppsSectionIPhone;
     }
     
-    NSLog(@"%@: Section not found for app product:", NSStringFromSelector(_cmd));
-    NSLog(@"%@", result);
     return KKITunesProductSectionNone;
 }
 
