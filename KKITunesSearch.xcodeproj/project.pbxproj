@@ -53,6 +53,8 @@
 		E71AC18316CE7C5E00605B29 /* KKITunesSearch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKITunesSearch-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		E73C430616DE4B4A0072130B /* KKITunesBookProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesBookProduct.h; sourceTree = "<group>"; };
 		E73C430716DE4B4A0072130B /* KKITunesBookProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesBookProduct.m; sourceTree = "<group>"; };
+		E73C430E16DF79E30072130B /* KKITunesSearch.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KKITunesSearch.podspec; sourceTree = "<group>"; };
+		E73C439116DF7D6D0072130B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E748140516DBA170009230F0 /* KKITunesSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesSearch.h; sourceTree = "<group>"; };
 		E748140616DBA170009230F0 /* KKITunesSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesSearch.m; sourceTree = "<group>"; };
 		E748140816DBA170009230F0 /* KKITunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesViewController.h; sourceTree = "<group>"; };
@@ -145,6 +147,8 @@
 		E7B3080016CD3A6200AFB34D = {
 			isa = PBXGroup;
 			children = (
+				E73C430E16DF79E30072130B /* KKITunesSearch.podspec */,
+				E73C439116DF7D6D0072130B /* README.md */,
 				E7B3081016CD3A6200AFB34D /* KKITunesSearch */,
 				E7B3082516CD3A6200AFB34D /* KKITunesSearchTests */,
 				E7B3080D16CD3A6200AFB34D /* Frameworks */,
