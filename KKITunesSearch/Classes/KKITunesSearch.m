@@ -8,10 +8,15 @@
 
 #import "KKITunesSearch.h"
 
-static NSString *kKKITunesSearchBaseURL = @"http://itunes.apple.com/search";
-static NSString *kKKITunesSearchErrorDomain = @"com.kimkode.KKITunesSearch";
-static NSInteger kKKITunesSearchErrorCode = 1;
-static NSInteger kKKITunesSearchLimit = 3;
+static NSString *const kKKITunesSearchBaseURL = @"http://itunes.apple.com/search";
+static NSString *const kKKITunesSearchErrorDomain = @"com.kimkode.KKITunesSearch";
+static const NSInteger kKKITunesSearchErrorCode = 1;
+
+typedef enum {
+    KKITunesSearchLimitLow = 3,
+    KKITunesSearchLimitMedium = 8,
+    KKITunesSearchLimitHigh = 20
+} KKITunesSearchLimit;
 
 @implementation KKITunesSearch
 
@@ -33,6 +38,11 @@ static NSInteger kKKITunesSearchLimit = 3;
     
     self = [super initWithBaseURL:url];
     if (self) {
+        
+        self.lowLimit = [NSNumber numberWithInteger:KKITunesSearchLimitLow];
+        self.mediumLimit = [NSNumber numberWithInteger:KKITunesSearchLimitMedium];
+        self.highLimit = [NSNumber numberWithInteger:KKITunesSearchLimitHigh];
+        
         [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/javascript"]];
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
@@ -101,23 +111,27 @@ static NSInteger kKKITunesSearchLimit = 3;
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    term, @"term",
-                                   [NSNumber numberWithInteger:kKKITunesSearchLimit], @"limit",
                                    nil];
     
     NSArray *entities = nil;
+    NSArray *limits = nil;
     switch (type) {
         case KKITunesProductTypeApps:
             entities = @[ @"iPadSoftware", @"software", @"macSoftware" ];
+            limits = @[ self.lowLimit, self.lowLimit, self.lowLimit ];
             params[@"attribute"] = @"songTerm";
             break;
         case KKITunesProductTypeMusic:
             entities = @[ @"musicArtist", @"album", @"song" ];
+            limits = @[ self.lowLimit, self.mediumLimit, self.highLimit ];
             break;
         case KKITunesProductTypeMovies:
-            entities = @[ @"movie", @"tvSeason", @"tvEpisode", @"shortFilm" ];
+            entities = @[ @"movie", @"tvSeason", @"tvEpisode" ];
+            limits = @[ self.mediumLimit, self.mediumLimit, self.highLimit ];
             break;
         case KKITunesProductTypeBooks:
             entities = @[ @"ebookAuthor", @"ebook", @"audiobook" ];
+            limits = @[ self.lowLimit, self.mediumLimit, self.mediumLimit ];
             break;
         default:;
     }
@@ -125,8 +139,10 @@ static NSInteger kKKITunesSearchLimit = 3;
     __block NSInteger batchResultsCount = 0;
     NSMutableArray *batchResults = [NSMutableArray array];
     NSMutableArray *operations = [NSMutableArray array];
-    for (NSString *entity in entities) {
-        params[@"entity"] = entity;
+    for (NSInteger i = 0; i < entities.count; i++) {
+        
+        params[@"entity"] = entities[i];
+        params[@"limit"] = limits[i];
         
         AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithParams:params
                                                                          success:^(NSUInteger count, NSArray *results) {

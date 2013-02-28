@@ -21,6 +21,9 @@ typedef enum {
 
 @property (nonatomic, strong) NSMutableDictionary *defaultParameters;
 @property (nonatomic, readonly) NSString *countryCode;
+@property (nonatomic, strong) NSNumber *lowLimit;
+@property (nonatomic, strong) NSNumber *mediumLimit;
+@property (nonatomic, strong) NSNumber *highLimit;
 
 + (KKITunesSearch *)sharedClient;
 
