@@ -28,7 +28,6 @@
 		E7129F5116D63C12002AD763 /* AFNetworking.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E7129EB416D63C12002AD763 /* AFNetworking.podspec */; };
 		E7129F5216D63C12002AD763 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E7129EB516D63C12002AD763 /* LICENSE */; };
 		E7129F5316D63C12002AD763 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E7129EB616D63C12002AD763 /* README.md */; };
-		E7129FB316D64CF4002AD763 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E7129FB216D64CF4002AD763 /* placeholder.png */; };
 		E7129FB516D68A4E002AD763 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7129FB416D68A4E002AD763 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E73C430C16DE50CC0072130B /* KKITunesBookProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E73C430B16DE50CC0072130B /* KKITunesBookProduct.m */; };
 		E748142B16DBA18E009230F0 /* KKITunesSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = E748141D16DBA18E009230F0 /* KKITunesSearch.m */; };
@@ -79,7 +78,6 @@
 		E7129EB416D63C12002AD763 /* AFNetworking.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFNetworking.podspec; sourceTree = "<group>"; };
 		E7129EB516D63C12002AD763 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E7129EB616D63C12002AD763 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		E7129FB216D64CF4002AD763 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		E7129FB416D68A4E002AD763 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E73C430A16DE50CC0072130B /* KKITunesBookProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesBookProduct.h; sourceTree = "<group>"; };
 		E73C430B16DE50CC0072130B /* KKITunesBookProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesBookProduct.m; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				E748143216DBA1BA009230F0 /* KKIPadViewController.h */,
 				E748143316DBA1BA009230F0 /* KKIPadViewController.m */,
 				E748143516DBA1CF009230F0 /* KKIPadViewController.xib */,
-				E7129FB116D64CF4002AD763 /* Resources */,
 				E7129E6A16D63706002AD763 /* Supporting Files */,
 			);
 			path = KKITunesSearchExample;
@@ -239,14 +236,6 @@
 				E7129EB316D63C12002AD763 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		E7129FB116D64CF4002AD763 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E7129FB216D64CF4002AD763 /* placeholder.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		E748141B16DBA18E009230F0 /* Classes */ = {
@@ -346,7 +335,6 @@
 				E7129F5116D63C12002AD763 /* AFNetworking.podspec in Resources */,
 				E7129F5216D63C12002AD763 /* LICENSE in Resources */,
 				E7129F5316D63C12002AD763 /* README.md in Resources */,
-				E7129FB316D64CF4002AD763 /* placeholder.png in Resources */,
 				E748142D16DBA18E009230F0 /* KKITunesViewController.xib in Resources */,
 				E748143716DBA1CF009230F0 /* KKIPadViewController.xib in Resources */,
 			);

@@ -71,6 +71,7 @@
 		E748143816DBA9D8009230F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E748143B16DD210F009230F0 /* KKITunesMovieProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesMovieProduct.h; sourceTree = "<group>"; };
 		E748143C16DD210F009230F0 /* KKITunesMovieProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesMovieProduct.m; sourceTree = "<group>"; };
+		E791851B16E4FF8C00761D75 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKKITunesSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B3080E16CD3A6200AFB34D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7B3081C16CD3A6200AFB34D /* KKITunesSearchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKITunesSearchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +145,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E791851A16E4FF8C00761D75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E791851B16E4FF8C00761D75 /* placeholder.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E7B3080016CD3A6200AFB34D = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +195,7 @@
 				E748140716DBA170009230F0 /* Controllers */,
 				E748140B16DBA170009230F0 /* Models */,
 				E7B3081116CD3A6200AFB34D /* Supporting Files */,
+				E791851A16E4FF8C00761D75 /* Resources */,
 			);
 			path = KKITunesSearch;
 			sourceTree = "<group>";
