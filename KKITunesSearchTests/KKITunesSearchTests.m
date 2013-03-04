@@ -8,6 +8,7 @@
 
 #import "KKITunesSearchTests.h"
 #import "KKITunesSearch.h"
+#import "KKITunesProducts.h"
 #import "SenTest+Async.h"
 
 @implementation KKITunesSearchTests
@@ -74,6 +75,43 @@
                                           [self blockTestCompleted];
                                       }];
     }];
+}
+
+- (void)testAppProduct {
+    
+    KKITunesProduct *product = [[KKITunesAppProduct alloc] init];
+    product.section = KKITunesAppsSectionIPad;
+    STAssertTrue(product.store == KKITunesStoreApp, @"Store should be App Store");
+    product.section = KKITunesAppsSectionIPhone;
+    STAssertTrue(product.store == KKITunesStoreApp, @"Store should be App Store");
+    product.section = KKITunesAppsSectionUniversal;
+    STAssertTrue(product.store == KKITunesStoreApp, @"Store should be App Store");
+    product.section = KKITunesAppsSectionMacOS;
+    STAssertTrue(product.store == KKITunesStoreMacApp, @"Store should be Mac App Store");
+    
+    product = [[KKITunesMusicProduct alloc] init];
+    product.section = KKITunesMusicSectionArtist;
+    STAssertTrue(product.store == KKITunesStoreITunes, @"Store should be iTunes");
+    product.section = KKITunesMusicSectionAlbum;
+    STAssertTrue(product.store == KKITunesStoreITunes, @"Store should be iTunes");
+    product.section = KKITunesMusicSectionTrack;
+    STAssertTrue(product.store == KKITunesStoreITunes, @"Store should be iTunes");
+    
+    product = [[KKITunesMovieProduct alloc] init];
+    product.section = KKITunesMoviesSectionMovies;
+    STAssertTrue(product.store == KKITunesStoreITunes, @"Store should be iTunes");
+    product.section = KKITunesMoviesSectionTVSeasons;
+    STAssertTrue(product.store == KKITunesStoreITunes, @"Store should be iTunes");
+    product.section = KKITunesMoviesSectionTVEpisodes;
+    STAssertTrue(product.store == KKITunesStoreITunes, @"Store should be iTunes");
+
+    product = [[KKITunesBookProduct alloc] init];
+    product.section = KKITunesBooksSectionAuthor;
+    STAssertTrue(product.store == KKITunesStoreIBook, @"Store should be iBookstore");
+    product.section = KKITunesBooksSectionIBooks;
+    STAssertTrue(product.store == KKITunesStoreIBook, @"Store should be iBookstore");
+    product.section = KKITunesBooksSectionAudioBooks;
+    STAssertTrue(product.store == KKITunesStoreITunes, @"Store should be iTunes");
 }
 
 @end

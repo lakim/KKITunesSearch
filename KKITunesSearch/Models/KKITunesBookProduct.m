@@ -48,4 +48,12 @@
     return self;
 }
 
+- (KKITunesStore)store {
+    
+    if (self.section == KKITunesBooksSectionAudioBooks) {
+        return KKITunesStoreITunes;
+    }
+    return KKITunesStoreIBook;
+}
+
 @end

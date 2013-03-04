@@ -32,4 +32,12 @@
     return KKITunesProductSectionNone;
 }
 
+- (KKITunesStore)store {
+    
+    if (self.section == KKITunesAppsSectionMacOS) {
+        return KKITunesStoreMacApp;
+    };
+    return KKITunesStoreApp;
+}
+
 @end

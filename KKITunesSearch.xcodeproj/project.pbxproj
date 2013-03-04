@@ -71,6 +71,7 @@
 		E748143816DBA9D8009230F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E748143B16DD210F009230F0 /* KKITunesMovieProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesMovieProduct.h; sourceTree = "<group>"; };
 		E748143C16DD210F009230F0 /* KKITunesMovieProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesMovieProduct.m; sourceTree = "<group>"; };
+		E7605FF916E50E6B0040F7C5 /* KKITunesProducts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesProducts.h; sourceTree = "<group>"; };
 		E791851B16E4FF8C00761D75 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		E7B3080B16CD3A6200AFB34D /* libKKITunesSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKKITunesSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B3080E16CD3A6200AFB34D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +142,7 @@
 				E73C430716DE4B4A0072130B /* KKITunesBookProduct.m */,
 				E748141216DBA170009230F0 /* KKITunesProductsCollection.h */,
 				E748141316DBA170009230F0 /* KKITunesProductsCollection.m */,
+				E7605FF916E50E6B0040F7C5 /* KKITunesProducts.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";

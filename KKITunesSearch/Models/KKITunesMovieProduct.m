@@ -48,4 +48,9 @@
     return self;
 }
 
+- (KKITunesStore)store {
+    
+    return KKITunesStoreITunes;
+}
+
 @end

@@ -57,4 +57,9 @@ NSInteger const KKITunesProductSectionNone = -1;
     return (self == product) || [self.id isEqual:product.id];
 }
 
+- (KKITunesStore)store {
+    
+    return KKITunesStoreNone;
+}
+
 @end

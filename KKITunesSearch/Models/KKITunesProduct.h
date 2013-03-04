@@ -41,12 +41,21 @@ typedef enum {
     KKITunesBooksSectionCount = 3,
 } KKITunesBooksSection;
 
+typedef enum {
+    KKITunesStoreApp = 0,
+    KKITunesStoreMacApp = 1,
+    KKITunesStoreITunes = 2,
+    KKITunesStoreIBook = 3,
+    KKITunesStoreNone = -1
+} KKITunesStore;
+
 @interface KKITunesProduct : NSObject
 
 @property (assign, nonatomic) KKITunesProductSection section;
 @property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSURL *thumbnailURL;
+@property (readonly, nonatomic) KKITunesStore store;
 
 + (id)productWithResult:(NSDictionary *)result;
 + (KKITunesProductSection)sectionFromResult:(NSDictionary *)result;
