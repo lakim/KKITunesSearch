@@ -185,6 +185,9 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
         cell.imageView.clipsToBounds = YES;
+        if ([SKStoreProductViewController class]) {
+            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        }
     }
     
     KKITunesProduct *product = [self.products productAtIndexPath:indexPath];
@@ -212,12 +215,17 @@ static const NSUInteger kKKViewControllerMinimumLength = 3;
 
     if (![SKStoreProductViewController class]) return;
     
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     KKITunesProduct *product = [self.products productAtIndexPath:indexPath];
     
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    cell.accessoryView = activityIndicator;
+    [activityIndicator startAnimating];
     SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
     productViewController.delegate = self;
     [productViewController loadProductWithParameters:@{ SKStoreProductParameterITunesItemIdentifier: product.id }
                                      completionBlock:^(BOOL result, NSError *error) {
+                                         cell.accessoryView = nil;
                                          if (result) {
                                              [self presentViewController:productViewController animated:YES completion:nil];
                                          }
