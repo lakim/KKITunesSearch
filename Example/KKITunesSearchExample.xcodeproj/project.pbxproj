@@ -40,6 +40,7 @@
 		E748143416DBA1BA009230F0 /* KKIPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E748143316DBA1BA009230F0 /* KKIPadViewController.m */; };
 		E748143716DBA1CF009230F0 /* KKIPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E748143516DBA1CF009230F0 /* KKIPadViewController.xib */; };
 		E748144416DD24E1009230F0 /* KKITunesMovieProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = E748144316DD24E0009230F0 /* KKITunesMovieProduct.m */; };
+		E7605FFD16E513C30040F7C5 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E7605FFC16E513C30040F7C5 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		E748143616DBA1CF009230F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KKIPadViewController.xib; sourceTree = "<group>"; };
 		E748144216DD24E0009230F0 /* KKITunesMovieProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKITunesMovieProduct.h; sourceTree = "<group>"; };
 		E748144316DD24E0009230F0 /* KKITunesMovieProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKITunesMovieProduct.m; sourceTree = "<group>"; };
+		E7605FFC16E513C30040F7C5 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				E748141B16DBA18E009230F0 /* Classes */,
 				E748141E16DBA18E009230F0 /* Controllers */,
 				E748142216DBA18E009230F0 /* Models */,
+				E7605FFB16E513C30040F7C5 /* Resources */,
 			);
 			name = KKITunesSearch;
 			path = ../KKITunesSearch;
@@ -276,6 +279,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E7605FFB16E513C30040F7C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E7605FFC16E513C30040F7C5 /* placeholder.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +348,7 @@
 				E7129F5316D63C12002AD763 /* README.md in Resources */,
 				E748142D16DBA18E009230F0 /* KKITunesViewController.xib in Resources */,
 				E748143716DBA1CF009230F0 /* KKIPadViewController.xib in Resources */,
+				E7605FFD16E513C30040F7C5 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
