@@ -12,22 +12,30 @@ NSInteger const KKITunesProductSectionNone = -1;
 
 @implementation KKITunesProduct
 
-+ (id)productWithResult:(NSDictionary *)result {
++ (id)productWithResult:(NSDictionary *)result type:(KKITunesProductType)type {
     
-    NSArray *subclassesNames = @[
-        @"KKITunesAppProduct",
-        @"KKITunesMusicProduct",
-        @"KKITunesMovieProduct",
-        @"KKITunesBookProduct"
-    ];
+    Class class = nil;
+    switch (type) {
+        case KKITunesProductTypeApps:
+            class = NSClassFromString(@"KKITunesAppProduct");
+            break;
+        case KKITunesProductTypeMusic:
+            class = NSClassFromString(@"KKITunesMusicProduct");
+            break;
+        case KKITunesProductTypeMovies:
+            class = NSClassFromString(@"KKITunesMovieProduct");
+            break;
+        case KKITunesProductTypeBooks:
+            class = NSClassFromString(@"KKITunesBookProduct");
+            break;
+        default:
+            break;
+    }
     
-    for (NSString *subclassName in subclassesNames) {
-        Class class = NSClassFromString(subclassName);
-        KKITunesProductSection section = [class sectionFromResult:result];
-        if (section != KKITunesProductSectionNone) {
-            // Pass the section to the initializer to avoid double pass
-            return [[class alloc] initWithResult:result section:section];
-        }
+    KKITunesProductSection section = [class sectionFromResult:result];
+    if (section != KKITunesProductSectionNone) {
+        // Pass the section to the initializer to avoid double pass
+        return [[class alloc] initWithResult:result section:section];
     }
     
     NSLog(@"%@: Class not found for result:", NSStringFromSelector(_cmd));

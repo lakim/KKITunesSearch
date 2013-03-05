@@ -53,7 +53,7 @@
     
     for (NSDictionary *result in results) {
         
-        KKITunesProduct *product = [KKITunesProduct productWithResult:result];
+        KKITunesProduct *product = [KKITunesProduct productWithResult:result type:self.type];
         if (product && ![products containsObject:product]) {
             [products addObject:product];
             if (product.section != KKITunesProductSectionNone) {

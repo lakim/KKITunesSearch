@@ -12,7 +12,7 @@
 
 + (KKITunesProductSection)sectionFromResult:(NSDictionary *)result {
     
-    if ([result[@"wrapperType"] isEqual:@"artist"] && [result[@"artistType"] isEqual:@"Author"]) {
+    if ([result[@"wrapperType"] isEqual:@"artist"]) {
         return KKITunesBooksSectionAuthor;
     }
     

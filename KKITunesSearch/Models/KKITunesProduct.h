@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KKITunesSearch.h"
 
 typedef NSInteger KKITunesProductSection;
 
@@ -54,10 +55,11 @@ typedef enum {
 @property (assign, nonatomic) KKITunesProductSection section;
 @property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSURL *url;
 @property (strong, nonatomic) NSURL *thumbnailURL;
 @property (readonly, nonatomic) KKITunesStore store;
 
-+ (id)productWithResult:(NSDictionary *)result;
++ (id)productWithResult:(NSDictionary *)result type:(KKITunesProductType)type;
 + (KKITunesProductSection)sectionFromResult:(NSDictionary *)result;
 - (id)initWithResult:(NSDictionary *)result section:(KKITunesProductSection)section;
 - (BOOL)isEqual:(KKITunesProduct *)product;
