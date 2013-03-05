@@ -34,13 +34,16 @@
         
         switch (self.section) {
             case KKITunesMusicSectionArtist:
+                self.id = result[@"artistId"];
                 self.title = result[@"artistName"];
+                self.url = [NSURL URLWithString:result[@"artistLinkUrl"]];
                 break;
             case KKITunesMusicSectionAlbum:
+                self.id = result[@"collectionId"];
                 self.title = result[@"collectionName"];
+                self.url = [NSURL URLWithString:result[@"collectionViewUrl"]];
                 break;
             case KKITunesMusicSectionTrack:
-                self.title = result[@"trackName"];
                 break;
             default:;
         }

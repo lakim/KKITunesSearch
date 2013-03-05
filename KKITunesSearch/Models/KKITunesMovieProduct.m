@@ -34,10 +34,11 @@
         
         switch (self.section) {
             case KKITunesMoviesSectionMovies:
-                self.title = result[@"trackName"];
                 break;
             case KKITunesMoviesSectionTVSeasons:
+                self.id = result[@"collectionId"];
                 self.title = result[@"collectionName"];
+                self.url = [NSURL URLWithString:result[@"collectionViewUrl"]];
                 break;
             case KKITunesMoviesSectionTVEpisodes:
                 self.title = [NSString stringWithFormat:@"%@ - %@", result[@"trackNumber"], result[@"trackName"]];

@@ -49,6 +49,7 @@ NSInteger const KKITunesProductSectionNone = -1;
     if (self) {
         self.id = result[@"trackId"];
         self.title = result[@"trackName"];
+        self.url = [NSURL URLWithString:result[@"trackViewUrl"]];
         self.thumbnailURL = [NSURL URLWithString:result[@"artworkUrl60"]];
         self.section = section;
     }
